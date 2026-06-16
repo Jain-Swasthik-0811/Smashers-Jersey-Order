@@ -37,6 +37,7 @@
     <div class="max-w-6xl w-full">
         <div class="w-full text-center mb-8 mt-2 md:mt-4">
             <div class="inline-flex items-center justify-center p-1 bg-white/10 rounded-full mb-4 shadow-xl ring-2 ring-white/20 backdrop-blur-sm">
+                <!-- User's Official Round Logo -->
                 <img src="logo_round.png" alt="Smashers Logo" class="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover shadow-inner bg-black relative z-10" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzIyMiIvPjwvc3ZnPg=='">
             </div>
             <h1 class="text-3xl md:text-5xl font-black text-white mb-2 tracking-tight drop-shadow-lg jersey-font tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-500 to-red-500 uppercase">Shri Pushpadanta Smashers</h1>
@@ -51,6 +52,7 @@
         <div id="formTab" class="w-full transition-all duration-500">
             <div class="flex flex-col-reverse lg:flex-row gap-8">
                 
+                <!-- LEFT COLUMN: The Order Form -->
                 <div class="w-full lg:w-1/2">
                     <form id="orderForm" class="bg-slate-800/80 backdrop-blur-md rounded-3xl p-6 md:p-8 shadow-2xl border border-slate-700 relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-64 h-64 bg-red-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
@@ -60,34 +62,74 @@
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div>
-                                <label class="block text-slate-400 text-sm font-semibold mb-2">Display Name</label>
-                                <input type="text" id="playerName" required placeholder="Enter your display name" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors shadow-inner disabled:opacity-50">
-                            </div>
-                            <div>
-                                <label class="block text-slate-400 text-sm font-semibold mb-2">Jersey Size</label>
-                                <select id="size" required class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 appearance-none shadow-inner cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
-                                    <option value="" disabled selected>Select Size</option>
-                                    <option value="S">Small (S)</option>
-                                    <option value="M">Medium (M)</option>
-                                    <option value="L">Large (L)</option>
-                                    <option value="XL">Extra Large (XL)</option>
-                                    <option value="XXL">Double XL (XXL)</option>
+                                <label class="block text-slate-400 text-sm font-semibold mb-2">Select Your Name</label>
+                                <select id="playerName" required class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 appearance-none shadow-inner cursor-pointer">
+                                    <option value="" disabled selected>-- Select Player --</option>
+                                    <optgroup label="Owners">
+                                        <option value="Parshwanath Jain">Mr. Parshwanath Jain</option>
+                                        <option value="Sagar Jain">Mr. Sagar Jain</option>
+                                        <option value="Swasthik Jain">Mr. Swasthik Jain</option>
+                                    </optgroup>
+                                    <optgroup label="Staff">
+                                        <option value="Pramod Kumar">Mr. Pramod Kumar</option>
+                                        <option value="Madhu G R">Dr. Madhu G R</option>
+                                        <option value="Shambavi">Mrs. Shambavi</option>
+                                    </optgroup>
+                                     <optgroup label="Captain / Vice Captain">
+                                        <option value="Srinivasa">Mr. Srinivasa </option>
+                                        <option value="Balingsi - Captain">Ms. Balingsi</option>
+                                    </optgroup>
+                                    <optgroup label="Category A">
+                                        <option value="Sanjay">Mr. Sanjay</option>
+                                        <option value="Mareppa">Mr. Mareppa</option>
+                                        <option value="Pallavi">Ms. Pallavi</option>
+                                        <option value="Sinchana">Ms. Sinchana</option>
+                                    </optgroup>
+                                    <optgroup label="Category B">
+                                        <option value="Koushik">Mr. Koushik</option>
+                                        <option value="Manamohana">Mr. Manamohana</option>
+                                        <option value="Nithyashree">Ms. Nithyashree</option>
+                                        <option value="Kruthika">Ms. Kruthika</option>
+                                        <option value="Sushmitha S H">Ms. Sushmitha S H</option>
+                                        <option value="Lalitha">Ms. Lalitha</option>
+                                    </optgroup>
+                                    <optgroup label="Category C">
+                                        <option value="Charan">Mr. Charan</option>
+                                        <option value="Lakshman">Mr. Lakshman</option>
+                                        <option value="Shebin">Mr. Shebin</option>
+                                    </optgroup>
                                 </select>
                             </div>
+                            <div>
+                                <label class="block text-slate-400 text-sm font-semibold mb-2">Name on Jersey <span class="text-xs text-slate-500 font-normal">(Display Name)</span></label>
+                                <input type="text" id="jerseyName" required maxlength="15" placeholder="e.g., NICKNAME, SURNAME" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 transition-colors shadow-inner disabled:opacity-50 disabled:cursor-not-allowed uppercase font-bold tracking-wider">
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-slate-400 text-sm font-semibold mb-2">Jersey Size</label>
+                            <select id="size" required class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 appearance-none shadow-inner cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                                <option value="" disabled selected>Select Size</option>
+                                <option value="S">Small (S)</option>
+                                <option value="M">Medium (M)</option>
+                                <option value="L">Large (L)</option>
+                                <option value="XL">Extra Large (XL)</option>
+                                <option value="XXL">Double XL (XXL)</option>
+                            </select>
                         </div>
 
                         <div class="mb-8">
                             <label class="block text-slate-400 text-sm font-semibold mb-2">Preferred Jersey Number <span class="text-xs text-red-400 ml-2 font-normal">(Provide 3 unique choices)</span></label>
                             <div class="grid grid-cols-3 gap-4">
-                                <div>
+                                <div class="relative">
                                     <input type="number" id="num1" required min="0" max="99" placeholder="1st" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 text-center text-lg font-bold focus:outline-none focus:border-red-500 transition-colors shadow-inner disabled:opacity-50 disabled:cursor-not-allowed">
                                     <p class="text-center text-xs text-slate-500 mt-1">1st Choice</p>
                                 </div>
-                                <div>
+                                <div class="relative">
                                     <input type="number" id="num2" required min="0" max="99" placeholder="2nd" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 text-center text-lg font-bold focus:outline-none focus:border-red-500 transition-colors shadow-inner disabled:opacity-50 disabled:cursor-not-allowed">
                                     <p class="text-center text-xs text-slate-500 mt-1">2nd Choice</p>
                                 </div>
-                                <div>
+                                <div class="relative">
                                     <input type="number" id="num3" required min="0" max="99" placeholder="3rd" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 text-center text-lg font-bold focus:outline-none focus:border-red-500 transition-colors shadow-inner disabled:opacity-50 disabled:cursor-not-allowed">
                                     <p class="text-center text-xs text-slate-500 mt-1">3rd Choice</p>
                                 </div>
@@ -98,9 +140,9 @@
                             <h3 class="text-lg font-bold text-white mb-4">Design Vote</h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label class="block text-slate-400 text-sm font-semibold mb-2">Select Jersey Base Color</label>
+                                    <label class="block text-slate-400 text-sm font-semibold mb-2">Select Base Color</label>
                                     <select id="colorSelect" required class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 appearance-none shadow-inner cursor-pointer font-medium disabled:opacity-50 disabled:cursor-not-allowed">
-                                        <option value="" disabled selected>Choose from 15 Premium Colors</option>
+                                        <option value="" disabled selected>Choose from 15 Colors</option>
                                         <option value="#dc2626">Crimson Red</option>
                                         <option value="#1e3a8a">Navy Blue</option>
                                         <option value="#2563eb">Royal Blue</option>
@@ -131,6 +173,7 @@
                     </form>
                 </div>
 
+                <!-- RIGHT COLUMN: Symmetrical 3D Preview -->
                 <div class="w-full lg:w-1/2 flex flex-col items-center justify-center min-h-[450px] md:min-h-[550px]">
                     <h3 class="text-xl font-bold text-slate-300 mb-8 flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
@@ -142,7 +185,7 @@
                     
                     <div id="jerseyContainer" class="perspective-1000 w-full max-w-[320px] md:max-w-[380px] mx-auto cursor-pointer group">
                         <div id="jerseyInner" class="relative w-full aspect-[4/4.5] transform-style-3d transition-transform-700">
-                            
+                            <!-- FRONT -->
                             <div class="absolute inset-0 backface-hidden flex flex-col items-center justify-start filter drop-shadow-2xl">
                                 <svg id="previewJerseyFront" viewBox="0 0 400 450" class="absolute inset-0 w-full h-full drop-shadow-2xl transition-colors duration-300 text-slate-700 z-0" style="color: #dc2626;">
                                     <path d="M120 30 C150 30 160 60 200 60 C240 60 250 30 280 30 C310 30 350 50 370 80 L390 140 C400 160 380 180 360 170 L320 150 L320 420 C320 435 305 450 290 450 L110 450 C95 450 80 435 80 420 L80 150 L40 170 C20 180 0 160 10 140 L30 80 C50 50 90 30 120 30 Z" fill="currentColor"/>
@@ -153,7 +196,6 @@
                                     <div class="absolute top-[20%] right-[26%] w-[16%]">
                                         <img src="logo_round.png" alt="Logo" class="w-full h-auto rounded-full object-cover drop-shadow-xl border-[2px] border-white/20" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzIyMiIvPjwvc3ZnPg=='">
                                     </div>
-                                    
                                     <div class="absolute top-[42%] left-0 right-0 text-center flex flex-col justify-center px-[20%]">
                                         <span class="block text-white/90 text-[10px] md:text-[11px] tracking-[0.15em] drop-shadow-md font-medium uppercase leading-tight">Shri Pushpadanta</span>
                                         <span class="block text-white text-[24px] md:text-[28px] tracking-wider font-black drop-shadow-lg uppercase leading-none mt-0.5 jersey-font">Smashers</span>
@@ -161,6 +203,7 @@
                                 </div>
                             </div>
 
+                            <!-- BACK -->
                             <div class="absolute inset-0 backface-hidden rotate-y-180 flex flex-col items-center justify-start filter drop-shadow-2xl">
                                 <svg id="previewJerseyBack" viewBox="0 0 400 450" class="absolute inset-0 w-full h-full drop-shadow-2xl transition-colors duration-300 text-slate-700 z-0" style="color: #dc2626;">
                                     <path d="M120 30 C150 30 160 60 200 60 C240 60 250 30 280 30 C310 30 350 50 370 80 L390 140 C400 160 380 180 360 170 L320 150 L320 420 C320 435 305 450 290 450 L110 450 C95 450 80 435 80 420 L80 150 L40 170 C20 180 0 160 10 140 L30 80 C50 50 90 30 120 30 Z" fill="currentColor"/>
@@ -168,8 +211,7 @@
                                 </svg>
                                 
                                 <div class="absolute inset-0 flex flex-col items-center z-10 pointer-events-none px-[20%]">
-                                    <div id="previewName" class="absolute top-[20%] text-white jersey-font text-[20px] md:text-[24px] tracking-widest uppercase drop-shadow-lg truncate w-[60%] text-center">PLAYER</div>
-                                    
+                                    <div id="previewName" class="absolute top-[20%] text-white jersey-font text-[16px] md:text-[20px] tracking-widest uppercase drop-shadow-lg truncate w-[80%] text-center">PLAYER</div>
                                     <div id="previewNumber" class="absolute top-[35%] text-white jersey-font text-[90px] md:text-[110px] leading-none drop-shadow-2xl font-black text-center w-full">00</div>
                                 </div>
                             </div>
@@ -232,13 +274,13 @@
         </div>
     </div>
 
+    <!-- FIREBASE INTEGRATION (Uses Modules) -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
         import { getFirestore, collection, doc, getDoc, setDoc, updateDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
         // =========================================================
         // IMPORTANT: PASTE YOUR FIREBASE CONFIGURATION HERE!
-        // Replace the inside of the brackets { ... } with your config
         // =========================================================
          const firebaseConfig = {
             apiKey: "AIzaSyCvGcZH-geN1Fqu2Lou2Ey4dq4UykomeFg",
@@ -267,26 +309,33 @@
         }
 
         let ordersData = [];
+        let globallyAllocatedNumbers = new Set();
+        let myCurrentAllocatedNumber = null; // Stores their current number so they aren't blocked from re-saving it
         let lastCheckedName = "";
         let isChecking = false;
 
-        // Attach event listeners dynamically to work inside the module
         document.getElementById('btn-formTab').addEventListener('click', () => switchTab('formTab'));
         document.getElementById('btn-resultsTab').addEventListener('click', () => switchTab('resultsTab'));
         document.getElementById('jerseyContainer').addEventListener('click', flipJersey);
         document.getElementById('exportBtn').addEventListener('click', exportToCSV);
         document.getElementById('orderForm').addEventListener('submit', submitForm);
-        document.getElementById('playerName').addEventListener('blur', checkExistingUser);
         
-        const inputs = ['playerName', 'num1', 'colorSelect'];
+        // Listen to the dropdown change
+        document.getElementById('playerName').addEventListener('change', checkExistingUser);
+        
+        const inputs = ['playerName', 'jerseyName', 'num1', 'num2', 'num3', 'colorSelect'];
         inputs.forEach(id => {
             const el = document.getElementById(id);
-            if(el) el.addEventListener('input', updatePreview);
+            if(el) {
+                el.addEventListener('input', () => {
+                    updatePreview();
+                    checkNumberAvailability(); // Real-time validation check
+                });
+            }
         });
 
-        // --- NEW HELPER: Locks or unlocks form inputs ---
         function setFormLocked(isLocked) {
-            const formInputs = ['size', 'num1', 'num2', 'num3', 'colorSelect', 'suggestedColor'];
+            const formInputs = ['jerseyName', 'size', 'num1', 'num2', 'num3', 'colorSelect', 'suggestedColor'];
             formInputs.forEach(id => {
                 const el = document.getElementById(id);
                 if(el) el.disabled = isLocked;
@@ -338,11 +387,12 @@
         }
 
         function updatePreview() {
-            const nameInput = document.getElementById('playerName');
+            const jerseyNameInput = document.getElementById('jerseyName');
             const numInput = document.getElementById('num1');
             const colorSelect = document.getElementById('colorSelect');
 
-            document.getElementById('previewName').innerText = nameInput.value.trim() || 'PLAYER';
+            let customJerseyName = jerseyNameInput.value.trim().toUpperCase();
+            document.getElementById('previewName').innerText = customJerseyName || 'PLAYER';
             document.getElementById('previewNumber').innerText = numInput.value || '00';
             
             if(colorSelect.value) {
@@ -360,13 +410,52 @@
             }
         }
 
+        // --- Real-Time Verification ---
+        function checkNumberAvailability() {
+            const submitBtn = document.getElementById('submitBtn');
+            const numInputs = ['num1', 'num2', 'num3'];
+            let hasError = false;
+
+            numInputs.forEach(id => {
+                const input = document.getElementById(id);
+                const value = input.value;
+                const warningId = `warning-${id}`;
+                
+                let warningEl = document.getElementById(warningId);
+                if (warningEl) warningEl.remove();
+
+                input.classList.remove('border-red-500', 'ring-red-500', 'bg-red-500/10');
+
+                // If taken AND it's not the number they already own right now
+                if (value && globallyAllocatedNumbers.has(value) && value !== myCurrentAllocatedNumber) {
+                    hasError = true;
+                    input.classList.add('border-red-500', 'ring-red-500', 'bg-red-500/10');
+                    
+                    warningEl = document.createElement('p');
+                    warningEl.id = warningId;
+                    warningEl.className = 'text-xs text-red-500 font-bold mt-1 absolute -bottom-5 w-full text-center';
+                    warningEl.innerText = '⚠️ Number Taken';
+                    input.parentNode.appendChild(warningEl);
+                }
+            });
+
+            if (hasError && !isChecking && submitBtn.innerText !== "Edits Locked") {
+                submitBtn.disabled = true;
+                submitBtn.innerText = "Fix Taken Numbers";
+            } else if (!hasError && !isChecking && submitBtn.innerText === "Fix Taken Numbers") {
+                submitBtn.disabled = false;
+                submitBtn.innerText = myCurrentAllocatedNumber ? "Update Order (1 Edit Remaining)" : "Submit Order";
+            }
+        }
+
         async function checkExistingUser() {
             if(!isFirebaseConnected || isChecking) return;
             const nameInput = document.getElementById('playerName');
             const submitBtn = document.getElementById('submitBtn');
-            const rawName = nameInput.value.trim().toLowerCase();
+            const rawName = nameInput.value.trim();
             
-            // Do not run check if empty or name hasn't changed
+            myCurrentAllocatedNumber = null;
+
             if(!rawName || rawName === lastCheckedName) {
                 if(!rawName) {
                     setFormLocked(false);
@@ -375,23 +464,30 @@
                 return;
             }
 
-            // Lock UI briefly while fetching
             lastCheckedName = rawName;
             isChecking = true;
             submitBtn.innerText = "Checking Name...";
             submitBtn.disabled = true;
 
             try {
-                const docRef = doc(db, 'orders', rawName);
+                // Ensure ID is completely uniform 
+                const docId = rawName.toLowerCase().replace(/[^a-z0-9]/g, '');
+                const docRef = doc(db, 'orders', docId);
                 const docSnap = await getDoc(docRef);
 
                 if(docSnap.exists()) {
                     const existingOrder = docSnap.data();
+                    
+                    // Lookup their currently owned number in the dashboard array to allow them to keep it
+                    const myOrderInDash = ordersData.find(o => o.playerName === rawName);
+                    if (myOrderInDash) myCurrentAllocatedNumber = myOrderInDash.allocatedNumber;
+
                     if(existingOrder.editCount >= 1) {
                         showMessage("Record found: You have used your 1 allowed edit. Form locked.", false);
                         setFormLocked(true);
                     } else {
                         showMessage("Existing entry found! You may update it exactly one time.", false, true);
+                        document.getElementById('jerseyName').value = existingOrder.jerseyName || '';
                         document.getElementById('size').value = existingOrder.size;
                         document.getElementById('num1').value = existingOrder.numberChoice1;
                         document.getElementById('num2').value = existingOrder.numberChoice2;
@@ -402,12 +498,15 @@
                         setFormLocked(false);
                         submitBtn.innerText = "Update Order (1 Edit Remaining)";
                         
-                        // Force a tiny delay so the DOM registers the select value before previewing
-                        setTimeout(updatePreview, 50);
+                        setTimeout(() => {
+                            updatePreview();
+                            checkNumberAvailability();
+                        }, 50);
                     }
                 } else {
                     setFormLocked(false);
                     submitBtn.innerText = "Submit Order";
+                    checkNumberAvailability();
                 }
             } catch (error) {
                 console.error("Error fetching user", error);
@@ -415,6 +514,7 @@
                 submitBtn.innerText = "Submit Order";
             } finally {
                 isChecking = false;
+                updatePreview();
             }
         }
 
@@ -425,7 +525,8 @@
                 return;
             }
             
-            const rawName = document.getElementById('playerName').value.trim();
+            const rawName = document.getElementById('playerName').value;
+            const jerseyName = document.getElementById('jerseyName').value.trim().toUpperCase();
             const n1 = document.getElementById('num1').value;
             const n2 = document.getElementById('num2').value;
             const n3 = document.getElementById('num3').value;
@@ -438,7 +539,7 @@
             }
 
             const selectedColorName = colorSelect.options[colorSelect.selectedIndex].text;
-            const docId = rawName.toLowerCase();
+            const docId = rawName.toLowerCase().replace(/[^a-z0-9]/g, '');
             const docRef = doc(db, 'orders', docId);
 
             try {
@@ -452,6 +553,7 @@
                     }
                     
                     await updateDoc(docRef, {
+                        jerseyName: jerseyName,
                         size: document.getElementById('size').value,
                         numberChoice1: n1,
                         numberChoice2: n2,
@@ -460,14 +562,15 @@
                         colorTheme: selectedColorName,
                         suggestedColor: suggestedColor,
                         editCount: 1,
-                        timestamp: new Date().toISOString(), // FIXED: Overwrites queue priority
+                        timestamp: new Date().toISOString(), 
                         lastEdited: new Date().toISOString()
                     });
                     showMessage("Order successfully updated! (Edits are now locked)", true);
-                    setFormLocked(true); // Lock the form instantly
+                    setFormLocked(true); 
                 } else {
                     await setDoc(docRef, {
                         playerName: rawName,
+                        jerseyName: jerseyName,
                         size: document.getElementById('size').value,
                         numberChoice1: n1,
                         numberChoice2: n2,
@@ -481,7 +584,7 @@
                     showMessage("New order submitted securely to database!", true);
                     
                     document.getElementById('orderForm').reset();
-                    lastCheckedName = ""; // Reset tracker so a new person can type the same string if needed
+                    lastCheckedName = ""; 
                     updatePreview();
                     document.getElementById('jerseyInner').style.transform = 'rotateY(0deg)';
                 }
@@ -498,9 +601,8 @@
                     ordersData.push(doc.data());
                 });
                 
-                if(!document.getElementById('resultsTab').classList.contains('hidden')) {
-                    updateResultsDashboard();
-                } else if(ordersData.length === 0) {
+                updateResultsDashboard(); // Always run this silently so validation arrays stay updated!
+                if(ordersData.length === 0 && !document.getElementById('resultsTab').classList.contains('hidden')) {
                      document.getElementById('ordersTableBody').innerHTML = `<tr><td colspan="6" class="p-8 text-center text-slate-500 italic">No orders submitted yet.</td></tr>`;
                 }
             });
@@ -540,6 +642,9 @@
                 order.allocationNote = allocationNote;
             });
 
+            // Update global tracker so real-time validation form knows what is officially taken
+            globallyAllocatedNumbers = allocatedNumbers;
+
             tbody.innerHTML = '';
             ordersData.forEach(order => {
                 const d = new Date(order.timestamp);
@@ -557,7 +662,10 @@
 
                 tr.innerHTML = `
                     <td class="p-4 text-slate-400 font-mono text-xs">${timeStr}</td>
-                    <td class="p-4 font-bold text-white flex items-center">${order.playerName} ${editBadge}</td>
+                    <td class="p-4">
+                        <div class="font-bold text-white flex items-center gap-1">${order.playerName} ${editBadge}</div>
+                        <div class="text-xs text-amber-400 font-semibold tracking-wider mt-0.5 uppercase">Print: ${order.jerseyName || 'PLAYER'}</div>
+                    </td>
                     <td class="p-4"><span class="bg-slate-700 px-2 py-1 rounded text-xs font-semibold">${order.size}</span></td>
                     <td class="p-4 bg-emerald-900/10">
                         <span class="font-black text-emerald-400 text-xl jersey-font tracking-wider drop-shadow-md">${order.allocatedNumber}</span>
@@ -581,7 +689,7 @@
                 return;
             }
 
-            const headers = ['Original Submit Time', 'Last Edited Time', 'Edit Count', 'Player Name', 'Size', 'FINAL ALLOCATED NUMBER', '1st Choice', '2nd Choice', '3rd Choice', 'Allocation Note', 'Color Theme Name', 'Suggested Color'];
+            const headers = ['Original Submit Time', 'Last Edited Time', 'Edit Count', 'Player Name', 'Jersey Display Name', 'Size', 'FINAL ALLOCATED NUMBER', '1st Choice', '2nd Choice', '3rd Choice', 'Allocation Note', 'Color Theme Name', 'Suggested Color'];
             const csvRows = [headers.join(',')];
 
             for (const order of ordersData) {
@@ -596,6 +704,7 @@
                     `"${formatTime(order.lastEdited)}"`,
                     order.editCount,
                     `"${order.playerName.replace(/"/g, '""')}"`,
+                    `"${(order.jerseyName || '').replace(/"/g, '""')}"`,
                     `"${order.size}"`,
                     `"${order.allocatedNumber}"`,
                     order.numberChoice1,
