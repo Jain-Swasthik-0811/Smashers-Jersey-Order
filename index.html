@@ -102,7 +102,6 @@
 
       <div id="formTab" class="w-full transition-all duration-500">
         <div class="flex flex-col-reverse lg:flex-row gap-8">
-          <!-- LEFT COLUMN: The Order Form -->
           <div class="w-full lg:w-1/2">
             <form
               id="orderForm"
@@ -279,7 +278,6 @@
                 </div>
               </div>
 
-              <!-- Edit Request Section (Hidden by Default) -->
               <div
                 id="editRequestSection"
                 class="hidden mb-6 bg-amber-500/10 border border-amber-500/30 p-5 rounded-2xl"
@@ -327,7 +325,6 @@
             </form>
           </div>
 
-          <!-- RIGHT COLUMN: Symmetrical 3D Preview -->
           <div
             class="w-full lg:w-1/2 flex flex-col items-center justify-center min-h-[450px] md:min-h-[550px]"
           >
@@ -358,7 +355,6 @@
                 id="jerseyInner"
                 class="relative w-full aspect-[4/4.5] transform-style-3d transition-transform-700"
               >
-                <!-- FRONT -->
                 <div
                   class="absolute inset-0 backface-hidden flex flex-col items-center justify-start filter drop-shadow-2xl"
                 >
@@ -409,7 +405,6 @@
                   </div>
                 </div>
 
-                <!-- BACK -->
                 <div
                   class="absolute inset-0 backface-hidden rotate-y-180 flex flex-col items-center justify-start filter drop-shadow-2xl"
                 >
@@ -588,7 +583,6 @@
       </div>
     </div>
 
-    <!-- FIREBASE INTEGRATION (Uses Modules) -->
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
       import {
@@ -627,6 +621,16 @@
         }
       } catch (e) {
         console.error("Firebase init error", e);
+      }
+
+      // ---------------------------------------------------------
+      // HELPER: Auto-Formats ANY number to exactly 2 digits
+      // e.g., "1" -> "01", "009" -> "09", "10" -> "10"
+      // ---------------------------------------------------------
+      function formatJerseyNum(numStr) {
+        if (numStr === undefined || numStr === null || numStr === "") return "";
+        let parsed = parseInt(numStr, 10);
+        return isNaN(parsed) ? "" : String(parsed).padStart(2, "0");
       }
 
       let ordersData = [];
@@ -672,6 +676,11 @@
             if (!isExistingUserMode) checkNumberAvailability();
           });
         }
+      });
+
+      // NEW FEATURE: Format the textbox beautifully to 2 digits when they click away
+      document.getElementById("jerseyNumber").addEventListener("blur", function() {
+        this.value = formatJerseyNum(this.value);
       });
 
       function setFormLocked(isLocked) {
@@ -752,8 +761,10 @@
         let customJerseyName = jerseyNameInput.value.trim().toUpperCase();
         document.getElementById("previewName").innerText =
           customJerseyName || "PLAYER";
+        
+        // Dynamically pad the preview text to two digits
         document.getElementById("previewNumber").innerText =
-          numInput.value || "00";
+          formatJerseyNum(numInput.value) || "00";
 
         if (colorSelect.value) {
           document.getElementById("previewJerseyFront").style.color =
@@ -781,7 +792,8 @@
         const input = document.getElementById("jerseyNumber");
         let hasError = false;
 
-        const value = input.value;
+        // Force check against the 2-digit formatted number mathematically
+        const valueToCheck = formatJerseyNum(input.value); 
         const warningId = `warning-jerseyNumber`;
 
         let warningEl = document.getElementById(warningId);
@@ -794,9 +806,9 @@
         );
 
         if (
-          value &&
-          globallyAllocatedNumbers.has(value) &&
-          value !== myCurrentAllocatedNumber
+          valueToCheck &&
+          globallyAllocatedNumbers.has(valueToCheck) &&
+          valueToCheck !== myCurrentAllocatedNumber
         ) {
           hasError = true;
           input.classList.add(
@@ -870,15 +882,16 @@
               document.getElementById("jerseyName").value =
                 existingOrder.jerseyName || "";
               document.getElementById("size").value = existingOrder.size || "";
-              document.getElementById("jerseyNumber").value =
-                existingOrder.jerseyNumber || existingOrder.numberChoice1 || "";
+              
+              // Load legacy data and ensure it's padded neatly for them
+              let loadedNum = formatJerseyNum(existingOrder.jerseyNumber || existingOrder.numberChoice1);
+              document.getElementById("jerseyNumber").value = loadedNum;
+              myCurrentAllocatedNumber = loadedNum;
+
               document.getElementById("colorSelect").value =
                 existingOrder.colorVote || "";
               document.getElementById("suggestedColor").value =
                 existingOrder.suggestedColor || "";
-
-              myCurrentAllocatedNumber =
-                document.getElementById("jerseyNumber").value;
 
               submitBtn.innerText = "Submit Updated Order";
               submitBtn.classList.remove(
@@ -979,9 +992,6 @@
         const rawName = document.getElementById("playerName").value;
         const docId = rawName.toLowerCase().replace(/[^a-z0-9]/g, "");
 
-        // ========================================================
-        // SCENARIO 1: SEND EDIT REQUEST (If they are locked out)
-        // ========================================================
         if (isExistingUserMode) {
           const editMsg = document.getElementById("editMessage").value.trim();
           const submitBtn = document.getElementById("submitBtn");
@@ -1018,7 +1028,10 @@
           .getElementById("jerseyName")
           .value.trim()
           .toUpperCase();
-        const jNum = document.getElementById("jerseyNumber").value;
+        
+        // Force the final save to be exactly 2-digits (e.g. 01)
+        const jNum = formatJerseyNum(document.getElementById("jerseyNumber").value);
+        
         const colorSelect = document.getElementById("colorSelect");
         const suggestedColor = document
           .getElementById("suggestedColor")
@@ -1028,9 +1041,6 @@
 
         const docRef = doc(db, "orders", docId);
 
-        // ========================================================
-        // SCENARIO 2: SUBMIT UPDATED ORDER (Admin Granted Access)
-        // ========================================================
         if (isUpdateMode) {
           try {
             await updateDoc(docRef, {
@@ -1041,14 +1051,14 @@
               colorTheme: selectedColorName,
               suggestedColor: suggestedColor,
               lastEdited: new Date().toISOString(),
-              editGranted: false, // LOCK THE FORM AGAIN
+              editGranted: false, 
             });
             showMessage("Order successfully updated!", true);
 
             document.getElementById("orderForm").reset();
             lastCheckedName = "";
             isUpdateMode = false;
-            setFormLocked(true); // Manually lock it immediately for security
+            setFormLocked(true); 
             updatePreview();
             document.getElementById("jerseyInner").style.transform =
               "rotateY(0deg)";
@@ -1060,9 +1070,6 @@
           return;
         }
 
-        // ========================================================
-        // SCENARIO 3: SUBMIT BRAND NEW ORDER
-        // ========================================================
         try {
           await setDoc(docRef, {
             playerName: rawName,
@@ -1122,7 +1129,9 @@
         ordersData.forEach((order) => {
           let finalNum = "Waitlist";
           let allocationNote = "Allocated";
-          let requestedNum = order.jerseyNumber || order.numberChoice1; // Supports legacy submissions
+          
+          // Force legacy data into proper format behind the scenes
+          let requestedNum = formatJerseyNum(order.jerseyNumber || order.numberChoice1);
 
           if (requestedNum && !allocatedNumbers.has(requestedNum)) {
             finalNum = requestedNum;
