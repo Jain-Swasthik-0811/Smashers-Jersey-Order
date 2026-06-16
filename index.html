@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri Pushpadanta Smashers - Jersey Order</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Oswald:wght@500;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            background-image: radial-gradient(circle at top right, #1e293b, #0f172a);
+            min-height: 100vh;
+            color: white;
+        }
+
+        /* 3D Flip Mechanics */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+        .transition-transform-700 { transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        .jersey-font { font-family: 'Oswald', sans-serif; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+    </style>
+</head>
+<body class="p-4 md:p-8 flex justify-center">
+
+    <div class="max-w-6xl w-full">
+        <div class="w-full text-center mb-8 mt-2 md:mt-4">
+            <div class="inline-flex items-center justify-center p-1 bg-white/10 rounded-full mb-4 shadow-xl ring-2 ring-white/20 backdrop-blur-sm">
+                <!-- User's Official Round Logo -->
+                <img src="logo_round.png" alt="Smashers Logo" class="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover shadow-inner bg-black relative z-10">
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black text-white mb-2 tracking-tight drop-shadow-lg jersey-font tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-500 to-red-500 uppercase">Shri Pushpadanta Smashers</h1>
+            <p class="text-slate-300 text-sm md:text-lg font-medium drop-shadow-md">Official Jersey Order Form 2026</p>
+        </div>
+
+        <div class="flex justify-center mb-8 gap-4">
+            <button id="btn-formTab" class="bg-white/20 hover:bg-white/30 text-white font-bold py-2 px-6 rounded-full transition-all backdrop-blur-sm border border-white/10 shadow-lg">Submit Order</button>
+            <button id="btn-resultsTab" class="bg-black/20 hover:bg-white/10 text-slate-300 font-bold py-2 px-6 rounded-full transition-all border border-transparent">Live Dashboard</button>
+        </div>
+
+        <div id="formTab" class="w-full transition-all duration-500">
+            <!-- Mobile-first row structure: Preview on top for mobile, side-by-side on desktop -->
+            <div class="flex flex-col-reverse lg:flex-row gap-8">
+                
+                <!-- LEFT COLUMN: The Order Form -->
+                <div class="w-full lg:w-1/2">
+                    <form id="orderForm" class="bg-slate-800/80 backdrop-blur-md rounded-3xl p-6 md:p-8 shadow-2xl border border-slate-700 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-red-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+
+                        <h2 class="text-2xl font-bold text-white mb-2 border-b border-slate-700 pb-2">Player Details</h2>
+                        <p class="text-xs text-amber-400 mb-6 font-medium">Note: You may only edit your submission once after saving.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-slate-400 text-sm font-semibold mb-2">Full Name</label>
+                                <input type="text" id="playerName" required placeholder="Enter your full name" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors shadow-inner">
+                            </div>
+                            <div>
+                                <label class="block text-slate-400 text-sm font-semibold mb-2">Jersey Size</label>
+                                <select id="size" required class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 appearance-none shadow-inner cursor-pointer">
+                                    <option value="" disabled selected>Select Size</option>
+                                    <option value="S">Small (S)</option>
+                                    <option value="M">Medium (M)</option>
+                                    <option value="L">Large (L)</option>
+                                    <option value="XL">Extra Large (XL)</option>
+                                    <option value="XXL">Double XL (XXL)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <label class="block text-slate-400 text-sm font-semibold mb-2">Preferred Jersey Number <span class="text-xs text-red-400 ml-2 font-normal">(Provide 3 unique choices)</span></label>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div>
+                                    <input type="number" id="num1" required min="0" max="99" placeholder="1st" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 text-center text-lg font-bold focus:outline-none focus:border-red-500 transition-colors shadow-inner">
+                                    <p class="text-center text-xs text-slate-500 mt-1">1st Choice</p>
+                                </div>
+                                <div>
+                                    <input type="number" id="num2" required min="0" max="99" placeholder="2nd" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 text-center text-lg font-bold focus:outline-none focus:border-red-500 transition-colors shadow-inner">
+                                    <p class="text-center text-xs text-slate-500 mt-1">2nd Choice</p>
+                                </div>
+                                <div>
+                                    <input type="number" id="num3" required min="0" max="99" placeholder="3rd" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 text-center text-lg font-bold focus:outline-none focus:border-red-500 transition-colors shadow-inner">
+                                    <p class="text-center text-xs text-slate-500 mt-1">3rd Choice</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-8 bg-slate-900/50 p-4 rounded-2xl border border-slate-700">
+                            <h3 class="text-lg font-bold text-white mb-4">Design Vote</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-slate-400 text-sm font-semibold mb-2">Select Jersey Base Color</label>
+                                    <select id="colorSelect" required class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 appearance-none shadow-inner cursor-pointer font-medium">
+                                        <option value="" disabled selected>Choose from 15 Premium Colors</option>
+                                        <option value="#dc2626">Crimson Red</option>
+                                        <option value="#1e3a8a">Navy Blue</option>
+                                        <option value="#2563eb">Royal Blue</option>
+                                        <option value="#38bdf8">Sky Blue</option>
+                                        <option value="#0d9488">Teal / Cyan</option>
+                                        <option value="#166534">Forest Green</option>
+                                        <option value="#10b981">Emerald Green</option>
+                                        <option value="#84cc16">Neon Green</option>
+                                        <option value="#ea580c">Sunrisers Orange</option>
+                                        <option value="#eab308">Golden Yellow</option>
+                                        <option value="#7e22ce">Royal Purple</option>
+                                        <option value="#db2777">Hot Pink</option>
+                                        <option value="#7f1d1d">Deep Maroon</option>
+                                        <option value="#334155">Charcoal Black</option>
+                                        <option value="#94a3b8">Silver / Steel Grey</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-slate-400 text-sm font-semibold mb-2">Suggest Another Color <span class="text-xs font-normal text-slate-500">(Optional)</span></label>
+                                    <input type="text" id="suggestedColor" placeholder="e.g., Mint Green, Coral" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 transition-colors shadow-inner">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="submitBtn" type="submit" class="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-bold py-4 px-4 rounded-xl shadow-lg shadow-red-500/30 transform transition hover:-translate-y-1 text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                            Submit Order
+                        </button>
+                    </form>
+                </div>
+
+                <div class="w-full lg:w-1/2 flex flex-col items-center justify-center min-h-[350px] md:min-h-[450px]">
+                    <h3 class="text-xl font-bold text-slate-300 mb-6 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                        </svg>
+                        Live 3D Preview
+                    </h3>
+                    
+                    <div id="jerseyContainer" class="perspective-1000 w-full max-w-[280px] md:max-w-[320px] mx-auto cursor-pointer group">
+                        <div id="jerseyInner" class="relative w-full aspect-[3/4] transform-style-3d transition-transform-700">
+                            
+                            <div class="absolute inset-0 backface-hidden flex flex-col items-center justify-start filter drop-shadow-2xl">
+                                <svg id="previewJerseyFront" viewBox="0 0 175 200" class="absolute inset-0 w-full h-full drop-shadow-2xl transition-colors duration-300 text-slate-700 z-0" style="color: #dc2626;">
+                                    <path d="M141.6,2.2c-11.4,1-19.1,10.6-29.2,10.8c-10.1-0.2-17.8-9.8-29.2-10.8c-10.4-0.9-19.9,2.8-26.6,9 L4.8,61c-8.6,8-3.4,22.6,8,22.6h12v135.2c0,8.8,7.2,16,16,16h143.2c8.8,0,16-7.2,16-16V83.6h12 c11.4,0,16.6-14.6,8-22.6l-51.8-49.8C161.5,5,152,1.3,141.6,2.2z" fill="currentColor"/>
+                                    <path d="M112.5,22.8c11.4-1,19.1-10.6,29.2-10.8c-2.5,15-13,23-29.2,23s-26.7-8-29.2-23C93.4,12.2,101.1,21.8,112.5,22.8z" fill="rgba(0,0,0,0.2)"/>
+                                    <path d="M40 80 Q 50 150 40 200" stroke="rgba(0,0,0,0.1)" stroke-width="3" fill="none"/>
+                                    <path d="M135 80 Q 125 150 135 200" stroke="rgba(0,0,0,0.1)" stroke-width="3" fill="none"/>
+                                </svg>
+                                
+                                <div class="relative pt-[25%] flex flex-col items-center w-full z-10 pointer-events-none px-4">
+                                    <img src="logo_round.jpg" alt="Logo" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover drop-shadow-xl border-[3px] border-white/20 mb-2">
+                                    <div class="text-center jersey-font w-full">
+                                        <span class="block text-white/90 text-[10px] md:text-xs tracking-[0.2em] drop-shadow-md font-medium uppercase">Shri Pushpadanta</span>
+                                        <span class="block text-white text-xl md:text-2xl tracking-wider font-black drop-shadow-lg uppercase leading-none mt-1">Smashers</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="absolute inset-0 backface-hidden rotate-y-180 flex flex-col items-center justify-start filter drop-shadow-2xl">
+                                <svg id="previewJerseyBack" viewBox="0 0 175 200" class="absolute inset-0 w-full h-full drop-shadow-2xl transition-colors duration-300 text-slate-700 z-0" style="color: #dc2626;">
+                                    <path d="M141.6,2.2c-11.4,1-19.1,10.6-29.2,10.8c-10.1-0.2-17.8-9.8-29.2-10.8c-10.4-0.9-19.9,2.8-26.6,9 L4.8,61c-8.6,8-3.4,22.6,8,22.6h12v135.2c0,8.8,7.2,16,16,16h143.2c8.8,0,16-7.2,16-16V83.6h12 c11.4,0,16.6-14.6,8-22.6l-51.8-49.8C161.5,5,152,1.3,141.6,2.2z" fill="currentColor"/>
+                                    <path d="M112.5,22.8c11.4-1,19.1-10.6,29.2-10.8c-2.5,15-13,23-29.2,23s-26.7-8-29.2-23C93.4,12.2,101.1,21.8,112.5,22.8z" fill="rgba(0,0,0,0.15)"/>
+                                </svg>
+                                
+                                <div class="relative pt-[28%] flex flex-col items-center w-full z-10 pointer-events-none px-6">
+                                    <div id="previewName" class="text-white jersey-font text-xl md:text-2xl tracking-widest uppercase mb-1 drop-shadow-lg truncate w-full text-center">PLAYER</div>
+                                    <div id="previewNumber" class="text-white jersey-font text-[80px] md:text-[90px] leading-[0.85] drop-shadow-2xl font-black">00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm mt-8 animate-pulse flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                        </svg>
+                        Tap shirt to rotate
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultsTab" class="w-full hidden transition-all duration-500">
+            <div class="bg-slate-800/80 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-slate-700">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 border-b border-slate-700 pb-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">Live Roster & Allocations</h2>
+                        <p class="text-slate-400 text-sm mt-1">Jersey numbers are prioritized exactly by submission timestamp.</p>
+                    </div>
+                    
+                    <button id="exportBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 px-4 rounded-xl text-sm transition-colors flex items-center gap-2 shadow-lg shadow-emerald-900/50 border border-emerald-500/50 w-full md:w-auto justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Export to Excel (CSV)
+                    </button>
+                </div>
+
+                <div class="overflow-x-auto rounded-xl border border-slate-700 bg-slate-900/50">
+                    <table class="w-full text-left text-slate-300 border-collapse min-w-[700px]">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700">Timestamp</th>
+                                <th class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700">Player</th>
+                                <th class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700">Size</th>
+                                <th class="p-4 text-xs font-semibold text-emerald-400 uppercase tracking-wider border-b border-slate-700 bg-emerald-900/10">Allocated #</th>
+                                <th class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700">Allocation Note</th>
+                                <th class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700">Color Vote</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody" class="divide-y divide-slate-700/50">
+                            <tr><td colspan="6" class="p-8 text-center text-slate-500 italic">Connecting to Database...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIREBASE INTEGRATION (Uses Modules) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, doc, getDoc, setDoc, updateDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        // =========================================================
+        // IMPORTANT: PASTE YOUR FIREBASE CONFIGURATION HERE!
+        // Replace the inside of the brackets { ... } with your config
+        // =========================================================
+        const firebaseConfig = {
+            apiKey: "AIzaSyCvGcZH-geN1Fqu2Lou2Ey4dq4UykomeFg",
+            authDomain: "smashers-jersey.firebaseapp.com",
+            projectId: "smashers-jersey",
+            storageBucket: "smashers-jersey.firebasestorage.app",
+            messagingSenderId: "780163953176",
+            appId: "1:780163953176:web:f3bdfd5c7c3092e09d496d",
+            measurementId: "G-K60NX4E7VT"
+        };
+        // =========================================================
+
+        let db;
+        let isFirebaseConnected = false;
+        
+        try {
+            const app = initializeApp(firebaseConfig);
+            db = getFirestore(app);
+            isFirebaseConnected = Object.keys(firebaseConfig).length > 0;
+            if(!isFirebaseConnected) {
+                console.warn("Firebase config is empty. Please add your keys.");
+                document.getElementById('ordersTableBody').innerHTML = `<tr><td colspan="6" class="p-8 text-center text-red-500 italic font-bold">⚠️ Firebase Configuration Missing! Please add your keys to the code.</td></tr>`;
+            }
+        } catch(e) {
+            console.error("Firebase init error", e);
+        }
+
+        let ordersData = [];
+
+        // Attach event listeners dynamically to work inside the module
+        document.getElementById('btn-formTab').addEventListener('click', () => switchTab('formTab'));
+        document.getElementById('btn-resultsTab').addEventListener('click', () => switchTab('resultsTab'));
+        document.getElementById('jerseyContainer').addEventListener('click', flipJersey);
+        document.getElementById('exportBtn').addEventListener('click', exportToCSV);
+        document.getElementById('orderForm').addEventListener('submit', submitForm);
+        document.getElementById('playerName').addEventListener('blur', checkExistingUser);
+        
+        const inputs = ['playerName', 'num1', 'colorSelect'];
+        inputs.forEach(id => {
+            const el = document.getElementById(id);
+            if(el) el.addEventListener('input', updatePreview);
+        });
+
+        function switchTab(tabId) {
+            document.getElementById('formTab').classList.add('hidden');
+            document.getElementById('resultsTab').classList.add('hidden');
+            
+            document.getElementById('btn-formTab').classList.remove('bg-white/20', 'text-white');
+            document.getElementById('btn-formTab').classList.add('bg-black/20', 'text-slate-300');
+            document.getElementById('btn-resultsTab').classList.remove('bg-white/20', 'text-white');
+            document.getElementById('btn-resultsTab').classList.add('bg-black/20', 'text-slate-300');
+            
+            document.getElementById(tabId).classList.remove('hidden');
+            document.getElementById(`btn-${tabId}`).classList.remove('bg-black/20', 'text-slate-300');
+            document.getElementById(`btn-${tabId}`).classList.add('bg-white/20', 'text-white');
+            
+            if(tabId === 'resultsTab') updateResultsDashboard();
+        }
+
+        function showMessage(msg, isSuccess = false, isWarning = false) {
+            const msgBox = document.createElement('div');
+            let bgClass = isSuccess ? 'bg-emerald-500 border-emerald-400' : 'bg-red-500 border-red-400';
+            if (isWarning) bgClass = 'bg-amber-500 border-amber-400';
+
+            msgBox.className = `fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-xl shadow-2xl z-50 transition-all duration-300 text-white font-bold flex items-center gap-2 border ${bgClass}`;
+            msgBox.style.opacity = '0';
+            msgBox.style.top = '-20px';
+            msgBox.innerHTML = `<span>${msg}</span>`;
+            
+            document.body.appendChild(msgBox);
+            requestAnimationFrame(() => {
+                msgBox.style.opacity = '1';
+                msgBox.style.top = '16px';
+            });
+
+            setTimeout(() => {
+                msgBox.style.opacity = '0';
+                msgBox.style.top = '-20px';
+                setTimeout(() => msgBox.remove(), 300);
+            }, 4000);
+        }
+
+        function updatePreview() {
+            const nameInput = document.getElementById('playerName');
+            const numInput = document.getElementById('num1');
+            const colorSelect = document.getElementById('colorSelect');
+
+            document.getElementById('previewName').innerText = nameInput.value.trim() || 'PLAYER';
+            document.getElementById('previewNumber').innerText = numInput.value || '00';
+            
+            if(colorSelect.value) {
+                document.getElementById('previewJerseyFront').style.color = colorSelect.value;
+                document.getElementById('previewJerseyBack').style.color = colorSelect.value;
+            }
+        }
+        
+        function flipJersey() {
+            const inner = document.getElementById('jerseyInner');
+            if(inner.style.transform === 'rotateY(180deg)') {
+                inner.style.transform = 'rotateY(0deg)';
+            } else {
+                inner.style.transform = 'rotateY(180deg)';
+            }
+        }
+
+        async function checkExistingUser() {
+            if(!isFirebaseConnected) return;
+            const nameInput = document.getElementById('playerName');
+            const submitBtn = document.getElementById('submitBtn');
+            const rawName = nameInput.value.trim().toLowerCase();
+            
+            if(!rawName) {
+                submitBtn.innerText = "Submit Order";
+                submitBtn.disabled = false;
+                return;
+            }
+
+            try {
+                // Fetch document from Firebase using the name as the ID
+                const docRef = doc(db, 'orders', rawName);
+                const docSnap = await getDoc(docRef);
+
+                if(docSnap.exists()) {
+                    const existingOrder = docSnap.data();
+                    if(existingOrder.editCount >= 1) {
+                        showMessage("Record found: You have used your 1 allowed edit. Form locked.", false);
+                        submitBtn.disabled = true;
+                        submitBtn.innerText = "Edits Locked";
+                    } else {
+                        showMessage("Existing entry found! You may update it exactly one time.", false, true);
+                        document.getElementById('size').value = existingOrder.size;
+                        document.getElementById('num1').value = existingOrder.numberChoice1;
+                        document.getElementById('num2').value = existingOrder.numberChoice2;
+                        document.getElementById('num3').value = existingOrder.numberChoice3;
+                        document.getElementById('colorSelect').value = existingOrder.colorVote;
+                        document.getElementById('suggestedColor').value = existingOrder.suggestedColor || '';
+                        
+                        submitBtn.innerText = "Update Order (1 Edit Remaining)";
+                        submitBtn.disabled = false;
+                        updatePreview();
+                    }
+                } else {
+                    submitBtn.innerText = "Submit Order";
+                    submitBtn.disabled = false;
+                }
+            } catch (error) {
+                console.error("Error fetching user", error);
+            }
+        }
+
+        async function submitForm(event) {
+            event.preventDefault();
+            if(!isFirebaseConnected) {
+                showMessage("Cannot submit. Firebase is not configured.", false);
+                return;
+            }
+            
+            const rawName = document.getElementById('playerName').value.trim();
+            const n1 = document.getElementById('num1').value;
+            const n2 = document.getElementById('num2').value;
+            const n3 = document.getElementById('num3').value;
+            const colorSelect = document.getElementById('colorSelect');
+            const suggestedColor = document.getElementById('suggestedColor').value.trim();
+            
+            if(n1 === n2 || n1 === n3 || (n2 === n3 && n2 !== '')) {
+                showMessage("Your 3 jersey number choices must be completely unique!", false);
+                return;
+            }
+
+            const selectedColorName = colorSelect.options[colorSelect.selectedIndex].text;
+            const docId = rawName.toLowerCase();
+            const docRef = doc(db, 'orders', docId);
+
+            try {
+                const docSnap = await getDoc(docRef);
+
+                if(docSnap.exists()) {
+                    let existingData = docSnap.data();
+                    if(existingData.editCount >= 1) {
+                        showMessage("Submission failed: You have already edited this entry once.", false);
+                        return;
+                    }
+                    
+                    await updateDoc(docRef, {
+                        size: document.getElementById('size').value,
+                        numberChoice1: n1,
+                        numberChoice2: n2,
+                        numberChoice3: n3,
+                        colorVote: colorSelect.value,
+                        colorTheme: selectedColorName,
+                        suggestedColor: suggestedColor,
+                        editCount: 1,
+                        lastEdited: new Date().toISOString()
+                    });
+                    showMessage("Order successfully updated! (Edits are now locked)", true);
+
+                } else {
+                    await setDoc(docRef, {
+                        playerName: rawName,
+                        size: document.getElementById('size').value,
+                        numberChoice1: n1,
+                        numberChoice2: n2,
+                        numberChoice3: n3,
+                        colorVote: colorSelect.value,
+                        colorTheme: selectedColorName,
+                        suggestedColor: suggestedColor,
+                        timestamp: new Date().toISOString(),
+                        editCount: 0
+                    });
+                    showMessage("New order submitted securely to database!", true);
+                }
+                
+                document.getElementById('orderForm').reset();
+                document.getElementById('submitBtn').innerText = "Submit Order";
+                updatePreview();
+                document.getElementById('jerseyInner').style.transform = 'rotateY(0deg)';
+                
+            } catch (error) {
+                console.error("Error writing to database", error);
+                showMessage("Database error. Please try again.", false);
+            }
+        }
+
+        // Set up a Real-Time Listener to Firebase
+        if(isFirebaseConnected) {
+            onSnapshot(collection(db, "orders"), (snapshot) => {
+                ordersData = [];
+                snapshot.forEach((doc) => {
+                    ordersData.push(doc.data());
+                });
+                
+                if(!document.getElementById('resultsTab').classList.contains('hidden')) {
+                    updateResultsDashboard();
+                } else if(ordersData.length === 0) {
+                     document.getElementById('ordersTableBody').innerHTML = `<tr><td colspan="6" class="p-8 text-center text-slate-500 italic">No orders submitted yet.</td></tr>`;
+                }
+            });
+        }
+
+        function updateResultsDashboard() {
+            const tbody = document.getElementById('ordersTableBody');
+            if(!tbody) return;
+            if(ordersData.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="p-8 text-center text-slate-500 italic">No orders submitted yet.</td></tr>`;
+                return;
+            }
+
+            let allocatedNumbers = new Set();
+            ordersData.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+            
+            ordersData.forEach(order => {
+                let finalNum = 'Waitlist';
+                let allocationNote = 'Got 1st Choice';
+
+                if(!allocatedNumbers.has(order.numberChoice1)) {
+                    finalNum = order.numberChoice1;
+                }
+                else if(order.numberChoice2 && !allocatedNumbers.has(order.numberChoice2)) {
+                    finalNum = order.numberChoice2;
+                    allocationNote = 'Got 2nd Choice';
+                }
+                else if(order.numberChoice3 && !allocatedNumbers.has(order.numberChoice3)) {
+                    finalNum = order.numberChoice3;
+                    allocationNote = 'Got 3rd Choice';
+                } else {
+                    allocationNote = 'Clash on all 3';
+                }
+                
+                if(finalNum !== 'Waitlist') allocatedNumbers.add(finalNum);
+                order.allocatedNumber = finalNum;
+                order.allocationNote = allocationNote;
+            });
+
+            tbody.innerHTML = '';
+            ordersData.forEach(order => {
+                const d = new Date(order.timestamp);
+                const timeStr = `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}:${String(d.getSeconds()).padStart(2, '0')}`;
+                
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-800/50 transition-colors';
+                
+                let noteColor = 'text-slate-400';
+                if(order.allocationNote.includes('2nd') || order.allocationNote.includes('3rd')) noteColor = 'text-amber-400';
+                if(order.allocationNote.includes('Clash')) noteColor = 'text-red-400 font-bold';
+                
+                let editBadge = order.editCount > 0 ? `<span class="ml-2 bg-amber-500/20 text-amber-400 text-[10px] px-1.5 py-0.5 rounded border border-amber-500/30">Edited</span>` : '';
+                let suggestedHtml = order.suggestedColor ? `<div class="text-xs text-slate-400 mt-1 italic">Suggested: ${order.suggestedColor}</div>` : '';
+
+                tr.innerHTML = `
+                    <td class="p-4 text-slate-400 font-mono text-xs">${timeStr}</td>
+                    <td class="p-4 font-bold text-white flex items-center">${order.playerName} ${editBadge}</td>
+                    <td class="p-4"><span class="bg-slate-700 px-2 py-1 rounded text-xs font-semibold">${order.size}</span></td>
+                    <td class="p-4 bg-emerald-900/10">
+                        <span class="font-black text-emerald-400 text-xl jersey-font tracking-wider drop-shadow-md">${order.allocatedNumber}</span>
+                    </td>
+                    <td class="p-4 text-xs ${noteColor}">${order.allocationNote}<br><span class="text-slate-500 opacity-50">(${order.numberChoice1}, ${order.numberChoice2}, ${order.numberChoice3})</span></td>
+                    <td class="p-4">
+                        <div class="flex items-center gap-2 bg-slate-800 p-1.5 rounded-lg w-max border border-slate-700">
+                            <div class="w-4 h-4 rounded-full shadow-sm" style="background-color: ${order.colorVote}"></div>
+                            <span class="text-xs font-semibold text-slate-300">${order.colorTheme}</span>
+                        </div>
+                        ${suggestedHtml}
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function exportToCSV() {
+            if (ordersData.length === 0) {
+                showMessage("No orders to export yet!", false);
+                return;
+            }
+
+            const headers = ['Original Submit Time', 'Last Edited Time', 'Edit Count', 'Player Name', 'Size', 'FINAL ALLOCATED NUMBER', '1st Choice', '2nd Choice', '3rd Choice', 'Allocation Note', 'Color Theme Name', 'Suggested Color'];
+            const csvRows = [headers.join(',')];
+
+            for (const order of ordersData) {
+                const formatTime = (isoString) => {
+                    if(!isoString) return 'N/A';
+                    const d = new Date(isoString);
+                    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}:${String(d.getSeconds()).padStart(2, '0')}`;
+                };
+
+                const rowValues = [
+                    `"${formatTime(order.timestamp)}"`,
+                    `"${formatTime(order.lastEdited)}"`,
+                    order.editCount,
+                    `"${order.playerName.replace(/"/g, '""')}"`,
+                    `"${order.size}"`,
+                    `"${order.allocatedNumber}"`,
+                    order.numberChoice1,
+                    order.numberChoice2,
+                    order.numberChoice3,
+                    `"${order.allocationNote}"`,
+                    `"${order.colorTheme}"`,
+                    `"${(order.suggestedColor || '').replace(/"/g, '""')}"`
+                ];
+                csvRows.push(rowValues.join(','));
+            }
+
+            const blob = new Blob([csvRows.join('\n')], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.setAttribute('hidden', '');
+            a.setAttribute('href', url);
+            a.setAttribute('download', 'Smashers_Final_Allocations.csv');
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            showMessage("Excel Downloaded!", true);
+        }
+
+        updatePreview();
+    </script>
+</body>
+</html>
