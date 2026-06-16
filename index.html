@@ -1,362 +1,203 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shri Pushpadanta Smashers - Jersey Order</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Oswald:wght@500;700&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Oswald:wght@500;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            background-image: radial-gradient(circle at top right, #1e293b, #0f172a);
+            min-height: 100vh;
+            color: white;
+        }
 
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #0f172a;
-        background-image: radial-gradient(
-          circle at top right,
-          #1e293b,
-          #0f172a
-        );
-        min-height: 100vh;
-        color: white;
-      }
-
-      /* 3D Flip Mechanics */
-      .perspective-1000 {
-        perspective: 1000px;
-      }
-      .transform-style-3d {
-        transform-style: preserve-3d;
-      }
-      .backface-hidden {
-        backface-visibility: hidden;
-      }
-      .rotate-y-180 {
-        transform: rotateY(180deg);
-      }
-      .transition-transform-700 {
-        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .jersey-font {
-        font-family: "Oswald", sans-serif;
-      }
-
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #1e293b;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #475569;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #64748b;
-      }
+        /* 3D Flip Mechanics */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+        .transition-transform-700 { transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        .jersey-font { font-family: 'Oswald', sans-serif; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
     </style>
-  </head>
-  <body class="p-4 md:p-8 flex justify-center">
+</head>
+<body class="p-4 md:p-8 flex justify-center">
+
     <div class="max-w-6xl w-full">
-      <div class="w-full text-center mb-8 mt-2 md:mt-4">
-        <div
-          class="inline-flex items-center justify-center p-1 bg-white/10 rounded-full mb-4 shadow-xl ring-2 ring-white/20 backdrop-blur-sm"
-        >
-          <!-- User's Official Round Logo -->
-          <img
-            src="logo_round.png"
-            alt="Smashers Logo"
-            class="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover shadow-inner bg-black relative z-10"
-            onerror="
-              this.src =
-                'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzIyMiIvPjwvc3ZnPg=='
-            "
-          />
+        <div class="w-full text-center mb-8 mt-2 md:mt-4">
+            <div class="inline-flex items-center justify-center p-1 bg-white/10 rounded-full mb-4 shadow-xl ring-2 ring-white/20 backdrop-blur-sm">
+                <img src="logo_round.png" alt="Smashers Logo" class="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover shadow-inner bg-black relative z-10" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzIyMiIvPjwvc3ZnPg=='">
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black text-white mb-2 tracking-tight drop-shadow-lg jersey-font tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-500 to-red-500 uppercase">Shri Pushpadanta Smashers</h1>
+            <p class="text-slate-300 text-sm md:text-lg font-medium drop-shadow-md">Official Jersey Order Form 2026</p>
         </div>
-        <h1
-          class="text-3xl md:text-5xl font-black text-white mb-2 tracking-tight drop-shadow-lg jersey-font tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-500 to-red-500 uppercase"
-        >
-          Shri Pushpadanta Smashers
-        </h1>
-        <p class="text-slate-300 text-sm md:text-lg font-medium drop-shadow-md">
-          Official Jersey Order Form 2026
-        </p>
-      </div>
 
-      <div class="flex justify-center mb-8 gap-4">
-        <button
-          id="btn-formTab"
-          class="bg-white/20 hover:bg-white/30 text-white font-bold py-2 px-6 rounded-full transition-all backdrop-blur-sm border border-white/10 shadow-lg"
-        >
-          Submit Order
-        </button>
-        <button
-          id="btn-resultsTab"
-          class="bg-black/20 hover:bg-white/10 text-slate-300 font-bold py-2 px-6 rounded-full transition-all border border-transparent"
-        >
-          Live Dashboard
-        </button>
-      </div>
+        <div class="flex justify-center mb-8 gap-4">
+            <button id="btn-formTab" class="bg-white/20 hover:bg-white/30 text-white font-bold py-2 px-6 rounded-full transition-all backdrop-blur-sm border border-white/10 shadow-lg">Submit Order</button>
+            <button id="btn-resultsTab" class="bg-black/20 hover:bg-white/10 text-slate-300 font-bold py-2 px-6 rounded-full transition-all border border-transparent">Live Dashboard</button>
+        </div>
 
-      <div id="formTab" class="w-full transition-all duration-500">
-        <div class="flex flex-col-reverse lg:flex-row gap-8">
-          <!-- LEFT COLUMN: The Order Form -->
-          <div class="w-full lg:w-1/2">
-            <form
-              id="orderForm"
-              class="bg-slate-800/80 backdrop-blur-md rounded-3xl p-6 md:p-8 shadow-2xl border border-slate-700 relative overflow-hidden"
-            >
-              <div
-                class="absolute top-0 right-0 w-64 h-64 bg-red-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"
-              ></div>
+        <div id="formTab" class="w-full transition-all duration-500">
+            <div class="flex flex-col-reverse lg:flex-row gap-8">
+                
+                <!-- LEFT COLUMN: The Order Form -->
+                <div class="w-full lg:w-1/2">
+                    <form id="orderForm" class="bg-slate-800/80 backdrop-blur-md rounded-3xl p-6 md:p-8 shadow-2xl border border-slate-700 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-red-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
 
-              <h2
-                class="text-2xl font-bold text-white mb-2 border-b border-slate-700 pb-2"
-              >
-                Player Details
-              </h2>
-              <p class="text-xs text-amber-400 mb-6 font-medium">
-                Note: You may only edit your submission once after saving.
-              </p>
+                        <h2 class="text-2xl font-bold text-white mb-6 border-b border-slate-700 pb-2">Player Details</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-slate-400 text-sm font-semibold mb-2">Select Your Name</label>
+                                <select id="playerName" required class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 appearance-none shadow-inner cursor-pointer">
+                                    <option value="" disabled selected>-- Select Player --</option>
+                                    <optgroup label="Owners">
+                                        <option value="Parshwanath Jain">Mr. Parshwanath Jain</option>
+                                        <option value="Sagar Jain">Mr. Sagar Jain</option>
+                                        <option value="Swasthik Jain">Mr. Swasthik Jain</option>
+                                    </optgroup>
+                                    <optgroup label="Staff">
+                                        <option value="Pramod Kumar">Mr. Pramod Kumar</option>
+                                        <option value="Madhu G R">Dr. Madhu G R</option>
+                                        <option value="Shambavi">Mrs. Shambavi</option>
+                                    </optgroup>
+                                     <optgroup label="Captain / Vice Captain">
+                                        <option value="Srinivasa">Mr. Srinivasa </option>
+                                        <option value="Balingsi - Captain">Ms. Balingsi</option>
+                                    </optgroup>
+                                    <optgroup label="Category A">
+                                        <option value="Sanjay">Mr. Sanjay</option>
+                                        <option value="Mareppa">Mr. Mareppa</option>
+                                        <option value="Pallavi">Ms. Pallavi</option>
+                                        <option value="Sinchana">Ms. Sinchana</option>
+                                    </optgroup>
+                                    <optgroup label="Category B">
+                                        <option value="Koushik">Mr. Koushik</option>
+                                        <option value="Manamohana">Mr. Manamohana</option>
+                                        <option value="Nithyashree">Ms. Nithyashree</option>
+                                        <option value="Kruthika">Ms. Kruthika</option>
+                                        <option value="Sushmitha S H">Ms. Sushmitha S H</option>
+                                        <option value="Lalitha">Ms. Lalitha</option>
+                                    </optgroup>
+                                    <optgroup label="Category C">
+                                        <option value="Charan">Mr. Charan</option>
+                                        <option value="Lakshman">Mr. Lakshman</option>
+                                        <option value="Shebin">Mr. Shebin</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-slate-400 text-sm font-semibold mb-2">Name on Jersey <span class="text-xs text-slate-500 font-normal">(Display Name)</span></label>
+                                <input type="text" id="jerseyName" required maxlength="20" placeholder="e.g., NICKNAME" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 transition-colors shadow-inner disabled:opacity-50 disabled:cursor-not-allowed uppercase font-bold tracking-wider">
+                            </div>
+                        </div>
 
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label class="block text-slate-400 text-sm font-semibold mb-2"
-                    >Select Your Name</label
-                  >
-                  <select
-                    id="playerName"
-                    required
-                    class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 appearance-none shadow-inner cursor-pointer"
-                  >
-                    <option value="" disabled selected>
-                      -- Select Player --
-                    </option>
-                    <optgroup label="Owners">
-                      <option value="Parshwanath Jain">
-                        Mr. Parshwanath Jain
-                      </option>
-                      <option value="Sagar Jain">Mr. Sagar Jain</option>
-                      <option value="Swasthik Jain">Mr. Swasthik Jain</option>
-                    </optgroup>
-                    <optgroup label="Staff">
-                      <option value="Pramod Kumar">Mr. Pramod Kumar</option>
-                      <option value="Madhu G R">Dr. Madhu G R</option>
-                      <option value="Shambavi">Mrs. Shambavi</option>
-                    </optgroup>
-                    <optgroup label="Captain / Vice Captain">
-                      <option value="Srinivasa">Mr. Srinivasa</option>
-                      <option value="Balingsi - Captain">Ms. Balingsi</option>
-                    </optgroup>
-                    <optgroup label="Category A">
-                      <option value="Sanjay">Mr. Sanjay</option>
-                      <option value="Mareppa">Mr. Mareppa</option>
-                      <option value="Pallavi">Ms. Pallavi</option>
-                      <option value="Sinchana">Ms. Sinchana</option>
-                    </optgroup>
-                    <optgroup label="Category B">
-                      <option value="Koushik">Mr. Koushik</option>
-                      <option value="Manamohana">Mr. Manamohana</option>
-                      <option value="Nithyashree">Ms. Nithyashree</option>
-                      <option value="Kruthika">Ms. Kruthika</option>
-                      <option value="Sushmitha S H">Ms. Sushmitha S H</option>
-                      <option value="Lalitha">Ms. Lalitha</option>
-                    </optgroup>
-                    <optgroup label="Category C">
-                      <option value="Charan">Mr. Charan</option>
-                      <option value="Lakshman">Mr. Lakshman</option>
-                      <option value="Shebin">Mr. Shebin</option>
-                    </optgroup>
-                  </select>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div>
+                                <label class="block text-slate-400 text-sm font-semibold mb-2">Jersey Size</label>
+                                <select id="size" required class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 appearance-none shadow-inner cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                                    <option value="" disabled selected>Select Size</option>
+                                    <option value="S">Small (S)</option>
+                                    <option value="M">Medium (M)</option>
+                                    <option value="L">Large (L)</option>
+                                    <option value="XL">Extra Large (XL)</option>
+                                    <option value="XXL">Double XL (XXL)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-slate-400 text-sm font-semibold mb-2">Preferred Jersey Number</label>
+                                <div class="relative w-full">
+                                    <input type="number" id="jerseyNumber" required min="0" max="99" placeholder="e.g., 10" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 text-center text-lg font-bold focus:outline-none focus:border-red-500 transition-colors shadow-inner disabled:opacity-50 disabled:cursor-not-allowed">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-8 bg-slate-900/50 p-4 rounded-2xl border border-slate-700">
+                            <h3 class="text-lg font-bold text-white mb-4">Design Vote</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-slate-400 text-sm font-semibold mb-2">Select Base Color</label>
+                                    <select id="colorSelect" required class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 appearance-none shadow-inner cursor-pointer font-medium disabled:opacity-50 disabled:cursor-not-allowed">
+                                        <option value="" disabled selected>Choose from 15 Colors</option>
+                                        <option value="#dc2626">Crimson Red</option>
+                                        <option value="#1e3a8a">Navy Blue</option>
+                                        <option value="#2563eb">Royal Blue</option>
+                                        <option value="#38bdf8">Sky Blue</option>
+                                        <option value="#0d9488">Teal / Cyan</option>
+                                        <option value="#166534">Forest Green</option>
+                                        <option value="#10b981">Emerald Green</option>
+                                        <option value="#84cc16">Neon Green</option>
+                                        <option value="#ea580c">Sunrisers Orange</option>
+                                        <option value="#eab308">Golden Yellow</option>
+                                        <option value="#7e22ce">Royal Purple</option>
+                                        <option value="#db2777">Hot Pink</option>
+                                        <option value="#7f1d1d">Deep Maroon</option>
+                                        <option value="#334155">Charcoal Black</option>
+                                        <option value="#94a3b8">Silver / Steel Grey</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-slate-400 text-sm font-semibold mb-2">Suggest Another Color <span class="text-xs font-normal text-slate-500">(Optional)</span></label>
+                                    <input type="text" id="suggestedColor" placeholder="e.g., Mint Green" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 transition-colors shadow-inner disabled:opacity-50 disabled:cursor-not-allowed">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Edit Request Section (Hidden by Default) -->
+                        <div id="editRequestSection" class="hidden mb-6 bg-amber-500/10 border border-amber-500/30 p-5 rounded-2xl">
+                            <h3 class="text-amber-400 font-bold mb-2 flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                </svg>
+                                Order Already Submitted
+                            </h3>
+                            <p class="text-sm text-slate-300 mb-4">You have already submitted an order. To prevent unauthorized changes, edits are locked. If you need to fix a mistake, send a request to the admin.</p>
+                            <label class="block text-amber-200 text-xs font-semibold mb-2">Reason for Edit:</label>
+                            <textarea id="editMessage" rows="2" placeholder="e.g., I selected the wrong size, I want to change my number..." class="w-full bg-slate-900/80 border border-amber-500/50 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 shadow-inner resize-none text-sm"></textarea>
+                        </div>
+
+                        <button id="submitBtn" type="submit" class="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-bold py-4 px-4 rounded-xl shadow-lg shadow-red-500/30 transform transition hover:-translate-y-1 text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                            Submit Order
+                        </button>
+                    </form>
                 </div>
-                <div>
-                  <label class="block text-slate-400 text-sm font-semibold mb-2"
-                    >Name on Jersey
-                    <span class="text-xs text-slate-500 font-normal"
-                      >(Display Name)</span
-                    ></label
-                  >
-                  <input
-                    type="text"
-                    id="jerseyName"
-                    required
-                    maxlength="20"
-                    placeholder="e.g., NICKNAME, SURNAME"
-                    class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 transition-colors shadow-inner disabled:opacity-50 disabled:cursor-not-allowed uppercase font-bold tracking-wider"
-                  />
-                </div>
-              </div>
 
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div>
-                  <label class="block text-slate-400 text-sm font-semibold mb-2"
-                    >Jersey Size</label
-                  >
-                  <select
-                    id="size"
-                    required
-                    class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 appearance-none shadow-inner cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    <option value="" disabled selected>Select Size</option>
-                    <option value="S">Small (S)</option>
-                    <option value="M">Medium (M)</option>
-                    <option value="L">Large (L)</option>
-                    <option value="XL">Extra Large (XL)</option>
-                    <option value="XXL">Double XL (XXL)</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-slate-400 text-sm font-semibold mb-2"
-                    >Preferred Jersey Number</label
-                  >
-                  <div class="relative w-full">
-                    <input
-                      type="number"
-                      id="jerseyNumber"
-                      required
-                      min="0"
-                      max="99"
-                      placeholder="e.g., 10"
-                      class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 text-center text-lg font-bold focus:outline-none focus:border-red-500 transition-colors shadow-inner disabled:opacity-50 disabled:cursor-not-allowed"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="mb-8 bg-slate-900/50 p-4 rounded-2xl border border-slate-700"
-              >
-                <h3 class="text-lg font-bold text-white mb-4">Design Vote</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      class="block text-slate-400 text-sm font-semibold mb-2"
-                      >Select Base Color</label
-                    >
-                    <select
-                      id="colorSelect"
-                      required
-                      class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 appearance-none shadow-inner cursor-pointer font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <option value="" disabled selected>
-                        Choose from 15 Colors
-                      </option>
-                      <option value="#dc2626">Crimson Red</option>
-                      <option value="#1e3a8a">Navy Blue</option>
-                      <option value="#2563eb">Royal Blue</option>
-                      <option value="#38bdf8">Sky Blue</option>
-                      <option value="#0d9488">Teal / Cyan</option>
-                      <option value="#166534">Forest Green</option>
-                      <option value="#10b981">Emerald Green</option>
-                      <option value="#84cc16">Neon Green</option>
-                      <option value="#ea580c">Sunrisers Orange</option>
-                      <option value="#eab308">Golden Yellow</option>
-                      <option value="#7e22ce">Royal Purple</option>
-                      <option value="#db2777">Hot Pink</option>
-                      <option value="#7f1d1d">Deep Maroon</option>
-                      <option value="#334155">Charcoal Black</option>
-                      <option value="#94a3b8">Silver / Steel Grey</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label
-                      class="block text-slate-400 text-sm font-semibold mb-2"
-                      >Suggest Another Color
-                      <span class="text-xs font-normal text-slate-500"
-                        >(Optional)</span
-                      ></label
-                    >
-                    <input
-                      type="text"
-                      id="suggestedColor"
-                      placeholder="e.g., Mint Green, Coral"
-                      class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl py-3 px-4 focus:outline-none focus:border-red-500 transition-colors shadow-inner disabled:opacity-50 disabled:cursor-not-allowed"
-                    />
-                    <p class="text-xs text-slate-500 mb-2 italic">
-                      If you don't see a color you like in the dropdown,
-                      type your own here.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <button
-                id="submitBtn"
-                type="submit"
-                class="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-bold py-4 px-4 rounded-xl shadow-lg shadow-red-500/30 transform transition hover:-translate-y-1 text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-              >
-                Submit Order
-              </button>
-            </form>
-          </div>
-
-          <!-- RIGHT COLUMN: Symmetrical 3D Preview -->
-          <div
-            class="w-full lg:w-1/2 flex flex-col items-center justify-center min-h-[450px] md:min-h-[550px]"
-          >
-            <h3
-              class="text-xl font-bold text-slate-300 mb-8 flex items-center gap-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-red-500"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                <path
-                  fill-rule="evenodd"
-                  d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              Live Preview
-            </h3>
-
-            <div
-              id="jerseyContainer"
-              class="perspective-1000 w-full max-w-[320px] md:max-w-[380px] mx-auto cursor-pointer group"
-            >
-              <div
-                id="jerseyInner"
-                class="relative w-full aspect-[4/4.5] transform-style-3d transition-transform-700"
-              >
-                <!-- FRONT -->
-                <div
-                  class="absolute inset-0 backface-hidden flex flex-col items-center justify-start filter drop-shadow-2xl"
-                >
-                  <svg
-                    id="previewJerseyFront"
-                    viewBox="0 0 400 450"
-                    class="absolute inset-0 w-full h-full drop-shadow-2xl transition-colors duration-300 text-slate-700 z-0"
-                    style="color: #dc2626"
-                  >
-                    <path
-                      d="M120 30 C150 30 160 60 200 60 C240 60 250 30 280 30 C310 30 350 50 370 80 L390 140 C400 160 380 180 360 170 L320 150 L320 420 C320 435 305 450 290 450 L110 450 C95 450 80 435 80 420 L80 150 L40 170 C20 180 0 160 10 140 L30 80 C50 50 90 30 120 30 Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M120 30 C150 30 160 60 200 60 C240 60 250 30 280 30 C250 45 240 70 200 70 C160 70 150 45 120 30 Z"
-                      fill="rgba(0,0,0,0.15)"
-                    />
-                  </svg>
-
-                  <div class="absolute inset-0 z-10 pointer-events-none">
-                    <div class="absolute top-[20%] right-[26%] w-[16%]">
-                      <img
-                        src="logo_round.png"
-                        alt="Logo"
-                        class="w-full h-auto rounded-full object-cover drop-shadow-xl border-[2px] border-white/20"
-                        onerror="
-                          this.src =
-                            'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzIyMiIvPjwvc3ZnPg=='
-                        "
-                      />
-                    </div>
-                    <div
+                <!-- RIGHT COLUMN: Symmetrical 3D Preview -->
+                <div class="w-full lg:w-1/2 flex flex-col items-center justify-center min-h-[450px] md:min-h-[550px]">
+                    <h3 class="text-xl font-bold text-slate-300 mb-8 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                        </svg>
+                        Live Jersey Preview
+                    </h3>
+                    
+                    <div id="jerseyContainer" class="perspective-1000 w-full max-w-[320px] md:max-w-[380px] mx-auto cursor-pointer group">
+                        <div id="jerseyInner" class="relative w-full aspect-[4/4.5] transform-style-3d transition-transform-700">
+                            <!-- FRONT -->
+                            <div class="absolute inset-0 backface-hidden flex flex-col items-center justify-start filter drop-shadow-2xl">
+                                <svg id="previewJerseyFront" viewBox="0 0 400 450" class="absolute inset-0 w-full h-full drop-shadow-2xl transition-colors duration-300 text-slate-700 z-0" style="color: #dc2626;">
+                                    <path d="M120 30 C150 30 160 60 200 60 C240 60 250 30 280 30 C310 30 350 50 370 80 L390 140 C400 160 380 180 360 170 L320 150 L320 420 C320 435 305 450 290 450 L110 450 C95 450 80 435 80 420 L80 150 L40 170 C20 180 0 160 10 140 L30 80 C50 50 90 30 120 30 Z" fill="currentColor"/>
+                                    <path d="M120 30 C150 30 160 60 200 60 C240 60 250 30 280 30 C250 45 240 70 200 70 C160 70 150 45 120 30 Z" fill="rgba(0,0,0,0.15)"/>
+                                </svg>
+                                
+                                <div class="absolute inset-0 z-10 pointer-events-none">
+                                    <div class="absolute top-[20%] right-[26%] w-[16%]">
+                                        <img src="logo_round.png" alt="Logo" class="w-full h-auto rounded-full object-cover drop-shadow-xl border-[2px] border-white/20" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzIyMiIvPjwvc3ZnPg=='">
+                                    </div>
+                                     <div
                       class="absolute top-[50%] w-full flex flex-col items-center justify-center px-4 z-10"
                     >
                       <span
@@ -372,672 +213,535 @@
                         </span>
                       </div>
                     </div>
-                  </div>
-                </div>
+                                </div>
+                            </div>
 
-                <!-- BACK -->
-                <div
-                  class="absolute inset-0 backface-hidden rotate-y-180 flex flex-col items-center justify-start filter drop-shadow-2xl"
-                >
-                  <svg
-                    id="previewJerseyBack"
-                    viewBox="0 0 400 450"
-                    class="absolute inset-0 w-full h-full drop-shadow-2xl transition-colors duration-300 text-slate-700 z-0"
-                    style="color: #dc2626"
-                  >
-                    <path
-                      d="M120 30 C150 30 160 60 200 60 C240 60 250 30 280 30 C310 30 350 50 370 80 L390 140 C400 160 380 180 360 170 L320 150 L320 420 C320 435 305 450 290 450 L110 450 C95 450 80 435 80 420 L80 150 L40 170 C20 180 0 160 10 140 L30 80 C50 50 90 30 120 30 Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M120 30 C150 30 160 40 200 40 C240 40 250 30 280 30 C250 35 240 45 200 45 C160 45 150 35 120 30 Z"
-                      fill="rgba(0,0,0,0.1)"
-                    />
-                  </svg>
-
-                  <div
-                    class="absolute inset-0 flex flex-col items-center z-10 pointer-events-none px-[20%]"
-                  >
-                    <div
-                      id="previewName"
-                      class="absolute top-[20%] text-white jersey-font text-[16px] md:text-[20px] tracking-widest uppercase drop-shadow-lg truncate w-[80%] text-center"
-                    >
-                      PLAYER
+                            <!-- BACK -->
+                            <div class="absolute inset-0 backface-hidden rotate-y-180 flex flex-col items-center justify-start filter drop-shadow-2xl">
+                                <svg id="previewJerseyBack" viewBox="0 0 400 450" class="absolute inset-0 w-full h-full drop-shadow-2xl transition-colors duration-300 text-slate-700 z-0" style="color: #dc2626;">
+                                    <path d="M120 30 C150 30 160 60 200 60 C240 60 250 30 280 30 C310 30 350 50 370 80 L390 140 C400 160 380 180 360 170 L320 150 L320 420 C320 435 305 450 290 450 L110 450 C95 450 80 435 80 420 L80 150 L40 170 C20 180 0 160 10 140 L30 80 C50 50 90 30 120 30 Z" fill="currentColor"/>
+                                    <path d="M120 30 C150 30 160 40 200 40 C240 40 250 30 280 30 C250 35 240 45 200 45 C160 45 150 35 120 30 Z" fill="rgba(0,0,0,0.1)"/>
+                                </svg>
+                                
+                                <div class="absolute inset-0 flex flex-col items-center z-10 pointer-events-none px-[20%]">
+                                    <div id="previewName" class="absolute top-[20%] text-white jersey-font text-[16px] md:text-[20px] tracking-widest uppercase drop-shadow-lg truncate w-[80%] text-center">PLAYER</div>
+                                    <div id="previewNumber" class="absolute top-[35%] text-white jersey-font text-[90px] md:text-[110px] leading-none drop-shadow-2xl font-black text-center w-full">00</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div
-                      id="previewNumber"
-                      class="absolute top-[35%] text-white jersey-font text-[90px] md:text-[110px] leading-none drop-shadow-2xl font-black text-center w-full"
-                    >
-                      00
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div class="flex flex-col items-center mt-10 gap-5 w-full">
-              <p
-                class="text-slate-400 text-sm animate-pulse flex items-center gap-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
-                  />
-                </svg>
-                Tap shirt to rotate
-              </p>
-
-              <div
-                class="bg-slate-800/80 border border-slate-600 rounded-xl p-3 flex items-start gap-3 max-w-[340px] shadow-lg backdrop-blur-sm"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-slate-400 shrink-0 mt-0.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
-                <p class="text-xs text-slate-300 leading-relaxed font-medium">
+                    <div class="flex flex-col items-center mt-10 gap-5 w-full">
+                        <p class="text-slate-400 text-sm animate-pulse flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                            </svg>
+                            Tap shirt to rotate
+                        </p>
+                        
+                        <div class="bg-slate-800/80 border border-slate-600 rounded-xl p-3 flex items-start gap-3 max-w-[340px] shadow-lg backdrop-blur-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                           <p class="text-xs text-slate-300 leading-relaxed font-medium">
     Note: This  image is for illustrative purposes only. The final design may vary.
 </p>
-              </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
 
-      <div id="resultsTab" class="w-full hidden transition-all duration-500">
-        <div
-          class="bg-slate-800/80 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-slate-700"
-        >
-          <div
-            class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 border-b border-slate-700 pb-4"
-          >
-            <div>
-              <h2 class="text-2xl font-bold text-white">
-                Live Roster & Allocations
-              </h2>
-              <p class="text-slate-400 text-sm mt-1">
-                Jersey numbers are prioritized exactly by submission timestamp.
-              </p>
+        <div id="resultsTab" class="w-full hidden transition-all duration-500">
+            <div class="bg-slate-800/80 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-slate-700">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 border-b border-slate-700 pb-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">Live Roster & Allocations</h2>
+                        <p class="text-slate-400 text-sm mt-1">Jersey numbers are prioritized exactly by submission timestamp.</p>
+                    </div>
+                    
+                    <button id="exportBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 px-4 rounded-xl text-sm transition-colors flex items-center gap-2 shadow-lg shadow-emerald-900/50 border border-emerald-500/50 w-full md:w-auto justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Export to Excel (CSV)
+                    </button>
+                </div>
+
+                <div class="overflow-x-auto rounded-xl border border-slate-700 bg-slate-900/50">
+                    <table class="w-full text-left text-slate-300 border-collapse min-w-[700px]">
+                        <thead class="bg-slate-800">
+                            <tr>
+                                <th class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700">Timestamp</th>
+                                <th class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700">Player</th>
+                                <th class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700">Size</th>
+                                <th class="p-4 text-xs font-semibold text-emerald-400 uppercase tracking-wider border-b border-slate-700 bg-emerald-900/10">Allocated #</th>
+                                <th class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700">Allocation Note</th>
+                                <th class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700">Color Vote</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody" class="divide-y divide-slate-700/50">
+                            <tr><td colspan="6" class="p-8 text-center text-slate-500 italic">Connecting to Database...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-
-            <button
-              id="exportBtn"
-              class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 px-4 rounded-xl text-sm transition-colors flex items-center gap-2 shadow-lg shadow-emerald-900/50 border border-emerald-500/50 w-full md:w-auto justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-              Export to Excel (CSV)
-            </button>
-          </div>
-
-          <div
-            class="overflow-x-auto rounded-xl border border-slate-700 bg-slate-900/50"
-          >
-            <table
-              class="w-full text-left text-slate-300 border-collapse min-w-[700px]"
-            >
-              <thead class="bg-slate-800">
-                <tr>
-                  <th
-                    class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700"
-                  >
-                    Timestamp
-                  </th>
-                  <th
-                    class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700"
-                  >
-                    Player
-                  </th>
-                  <th
-                    class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700"
-                  >
-                    Size
-                  </th>
-                  <th
-                    class="p-4 text-xs font-semibold text-emerald-400 uppercase tracking-wider border-b border-slate-700 bg-emerald-900/10"
-                  >
-                    Allocated #
-                  </th>
-                  <th
-                    class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700"
-                  >
-                    Allocation Note
-                  </th>
-                  <th
-                    class="p-4 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700"
-                  >
-                    Color Vote
-                  </th>
-                </tr>
-              </thead>
-              <tbody id="ordersTableBody" class="divide-y divide-slate-700/50">
-                <tr>
-                  <td colspan="6" class="p-8 text-center text-slate-500 italic">
-                    Connecting to Database...
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
-      </div>
     </div>
 
     <!-- FIREBASE INTEGRATION (Uses Modules) -->
     <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-      import {
-        getFirestore,
-        collection,
-        doc,
-        getDoc,
-        setDoc,
-        updateDoc,
-        onSnapshot,
-      } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, doc, getDoc, setDoc, updateDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-      // =========================================================
-      // IMPORTANT: PASTE YOUR FIREBASE CONFIGURATION HERE!
-      // =========================================================
-      const firebaseConfig = {
-        apiKey: "AIzaSyCvGcZH-geN1Fqu2Lou2Ey4dq4UykomeFg",
-        authDomain: "smashers-jersey.firebaseapp.com",
-        projectId: "smashers-jersey",
-        storageBucket: "smashers-jersey.firebasestorage.app",
-        messagingSenderId: "780163953176",
-        appId: "1:780163953176:web:f3bdfd5c7c3092e09d496d",
-        measurementId: "G-K60NX4E7VT",
-      };
-      // =========================================================
+        // =========================================================
+        const firebaseConfig = {
+            apiKey: "AIzaSyCvGcZH-geN1Fqu2Lou2Ey4dq4UykomeFg",
+            authDomain: "smashers-jersey.firebaseapp.com",
+            projectId: "smashers-jersey",
+            storageBucket: "smashers-jersey.firebasestorage.app",
+            messagingSenderId: "780163953176",
+            appId: "1:780163953176:web:f3bdfd5c7c3092e09d496d",
+            measurementId: "G-K60NX4E7VT"
+        };
+        // =========================================================
 
-      let db;
-      let isFirebaseConnected = false;
-
-      try {
-        const app = initializeApp(firebaseConfig);
-        db = getFirestore(app);
-        isFirebaseConnected = Object.keys(firebaseConfig).length > 0;
-        if (!isFirebaseConnected) {
-          console.warn("Firebase config is empty. Please add your keys.");
-          document.getElementById("ordersTableBody").innerHTML =
-            `<tr><td colspan="6" class="p-8 text-center text-red-500 italic font-bold">⚠️ Firebase Configuration Missing! Please add your keys to the code.</td></tr>`;
-        }
-      } catch (e) {
-        console.error("Firebase init error", e);
-      }
-
-      let ordersData = [];
-      let globallyAllocatedNumbers = new Set();
-      let myCurrentAllocatedNumber = null; // Stores their current number so they aren't blocked from re-saving it
-      let lastCheckedName = "";
-      let isChecking = false;
-
-      document
-        .getElementById("btn-formTab")
-        .addEventListener("click", () => switchTab("formTab"));
-      document
-        .getElementById("btn-resultsTab")
-        .addEventListener("click", () => switchTab("resultsTab"));
-      document
-        .getElementById("jerseyContainer")
-        .addEventListener("click", flipJersey);
-      document
-        .getElementById("exportBtn")
-        .addEventListener("click", exportToCSV);
-      document
-        .getElementById("orderForm")
-        .addEventListener("submit", submitForm);
-
-      // Listen to the dropdown change
-      document
-        .getElementById("playerName")
-        .addEventListener("change", checkExistingUser);
-
-      const inputs = [
-        "playerName",
-        "jerseyName",
-        "jerseyNumber",
-        "colorSelect",
-      ];
-      inputs.forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.addEventListener("input", () => {
-            updatePreview();
-            checkNumberAvailability(); // Real-time validation check
-          });
-        }
-      });
-
-      function setFormLocked(isLocked) {
-        const formInputs = [
-          "jerseyName",
-          "size",
-          "jerseyNumber",
-          "colorSelect",
-          "suggestedColor",
-        ];
-        formInputs.forEach((id) => {
-          const el = document.getElementById(id);
-          if (el) el.disabled = isLocked;
-        });
-        const submitBtn = document.getElementById("submitBtn");
-        submitBtn.disabled = isLocked;
-        if (isLocked) {
-          submitBtn.innerText = "Edits Locked";
-        }
-      }
-
-      function switchTab(tabId) {
-        document.getElementById("formTab").classList.add("hidden");
-        document.getElementById("resultsTab").classList.add("hidden");
-
-        document
-          .getElementById("btn-formTab")
-          .classList.remove("bg-white/20", "text-white");
-        document
-          .getElementById("btn-formTab")
-          .classList.add("bg-black/20", "text-slate-300");
-        document
-          .getElementById("btn-resultsTab")
-          .classList.remove("bg-white/20", "text-white");
-        document
-          .getElementById("btn-resultsTab")
-          .classList.add("bg-black/20", "text-slate-300");
-
-        document.getElementById(tabId).classList.remove("hidden");
-        document
-          .getElementById(`btn-${tabId}`)
-          .classList.remove("bg-black/20", "text-slate-300");
-        document
-          .getElementById(`btn-${tabId}`)
-          .classList.add("bg-white/20", "text-white");
-
-        if (tabId === "resultsTab") updateResultsDashboard();
-      }
-
-      function showMessage(msg, isSuccess = false, isWarning = false) {
-        const msgBox = document.createElement("div");
-        let bgClass = isSuccess
-          ? "bg-emerald-500 border-emerald-400"
-          : "bg-red-500 border-red-400";
-        if (isWarning) bgClass = "bg-amber-500 border-amber-400";
-
-        msgBox.className = `fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-xl shadow-2xl z-50 transition-all duration-300 text-white font-bold flex items-center gap-2 border ${bgClass}`;
-        msgBox.style.opacity = "0";
-        msgBox.style.top = "-20px";
-        msgBox.innerHTML = `<span>${msg}</span>`;
-
-        document.body.appendChild(msgBox);
-        requestAnimationFrame(() => {
-          msgBox.style.opacity = "1";
-          msgBox.style.top = "16px";
-        });
-
-        setTimeout(() => {
-          msgBox.style.opacity = "0";
-          msgBox.style.top = "-20px";
-          setTimeout(() => msgBox.remove(), 300);
-        }, 4000);
-      }
-
-      function updatePreview() {
-        const jerseyNameInput = document.getElementById("jerseyName");
-        const numInput = document.getElementById("jerseyNumber");
-        const colorSelect = document.getElementById("colorSelect");
-
-        let customJerseyName = jerseyNameInput.value.trim().toUpperCase();
-        document.getElementById("previewName").innerText =
-          customJerseyName || "PLAYER";
-        document.getElementById("previewNumber").innerText =
-          numInput.value || "00";
-
-        if (colorSelect.value) {
-          document.getElementById("previewJerseyFront").style.color =
-            colorSelect.value;
-          document.getElementById("previewJerseyBack").style.color =
-            colorSelect.value;
-        }
-      }
-
-      function flipJersey() {
-        const inner = document.getElementById("jerseyInner");
-        if (inner.style.transform === "rotateY(180deg)") {
-          inner.style.transform = "rotateY(0deg)";
-        } else {
-          inner.style.transform = "rotateY(180deg)";
-        }
-      }
-
-      // --- Real-Time Verification ---
-      function checkNumberAvailability() {
-        const submitBtn = document.getElementById("submitBtn");
-        const input = document.getElementById("jerseyNumber");
-        let hasError = false;
-
-        const value = input.value;
-        const warningId = `warning-jerseyNumber`;
-
-        let warningEl = document.getElementById(warningId);
-        if (warningEl) warningEl.remove();
-
-        input.classList.remove(
-          "border-red-500",
-          "ring-red-500",
-          "bg-red-500/10",
-        );
-
-        // If taken AND it's not the number they already own right now
-        if (
-          value &&
-          globallyAllocatedNumbers.has(value) &&
-          value !== myCurrentAllocatedNumber
-        ) {
-          hasError = true;
-          input.classList.add(
-            "border-red-500",
-            "ring-red-500",
-            "bg-red-500/10",
-          );
-
-          warningEl = document.createElement("p");
-          warningEl.id = warningId;
-          warningEl.className =
-            "text-xs text-red-500 font-bold mt-1 absolute -bottom-5 w-full text-center";
-          warningEl.innerText = "⚠️ Number Taken";
-          input.parentNode.appendChild(warningEl);
-        }
-
-        if (hasError && !isChecking && submitBtn.innerText !== "Edits Locked") {
-          submitBtn.disabled = true;
-          submitBtn.innerText = "Fix Taken Number";
-        } else if (
-          !hasError &&
-          !isChecking &&
-          submitBtn.innerText === "Fix Taken Number"
-        ) {
-          submitBtn.disabled = false;
-          submitBtn.innerText = myCurrentAllocatedNumber
-            ? "Update Order (1 Edit Remaining)"
-            : "Submit Order";
-        }
-      }
-
-      async function checkExistingUser() {
-        if (!isFirebaseConnected || isChecking) return;
-        const nameInput = document.getElementById("playerName");
-        const submitBtn = document.getElementById("submitBtn");
-        const rawName = nameInput.value.trim();
-
-        myCurrentAllocatedNumber = null;
-
-        if (!rawName || rawName === lastCheckedName) {
-          if (!rawName) {
-            setFormLocked(false);
-            submitBtn.innerText = "Submit Order";
-          }
-          return;
-        }
-
-        lastCheckedName = rawName;
-        isChecking = true;
-        submitBtn.innerText = "Checking Name...";
-        submitBtn.disabled = true;
-
+        let db;
+        let isFirebaseConnected = false;
+        
         try {
-          // Ensure ID is completely uniform
-          const docId = rawName.toLowerCase().replace(/[^a-z0-9]/g, "");
-          const docRef = doc(db, "orders", docId);
-          const docSnap = await getDoc(docRef);
+            const app = initializeApp(firebaseConfig);
+            db = getFirestore(app);
+            isFirebaseConnected = Object.keys(firebaseConfig).length > 0;
+            if(!isFirebaseConnected) {
+                console.warn("Firebase config is empty. Please add your keys.");
+                document.getElementById('ordersTableBody').innerHTML = `<tr><td colspan="6" class="p-8 text-center text-red-500 italic font-bold">⚠️ Firebase Configuration Missing! Please add your keys to the code.</td></tr>`;
+            }
+        } catch(e) {
+            console.error("Firebase init error", e);
+        }
 
-          if (docSnap.exists()) {
-            const existingOrder = docSnap.data();
+        let ordersData = [];
+        let globallyAllocatedNumbers = new Set();
+        let lastCheckedName = "";
+        let isChecking = false;
+        let isExistingUserMode = false; // Tracks if we are in "Request Edit" mode
+        let isUpdateMode = false; // Tracks if Admin granted them access to update
+        let myCurrentAllocatedNumber = null;
 
-            // Lookup their currently owned number in the dashboard array to allow them to keep it
-            const myOrderInDash = ordersData.find(
-              (o) => o.playerName === rawName,
-            );
-            if (myOrderInDash)
-              myCurrentAllocatedNumber = myOrderInDash.allocatedNumber;
+        document.getElementById('btn-formTab').addEventListener('click', () => switchTab('formTab'));
+        document.getElementById('btn-resultsTab').addEventListener('click', () => switchTab('resultsTab'));
+        document.getElementById('jerseyContainer').addEventListener('click', flipJersey);
+        document.getElementById('exportBtn').addEventListener('click', exportToCSV);
+        document.getElementById('orderForm').addEventListener('submit', submitForm);
+        
+        // Listen to the dropdown change
+        document.getElementById('playerName').addEventListener('change', checkExistingUser);
+        
+        const inputs = ['playerName', 'jerseyName', 'jerseyNumber', 'colorSelect'];
+        inputs.forEach(id => {
+            const el = document.getElementById(id);
+            if(el) {
+                el.addEventListener('input', () => {
+                    updatePreview();
+                    if(!isExistingUserMode) checkNumberAvailability();
+                });
+            }
+        });
 
-            if (existingOrder.editCount >= 1) {
-              showMessage(
-                "Record found: You have used your 1 allowed edit. Form locked.",
-                false,
-              );
-              setFormLocked(true);
+        function setFormLocked(isLocked) {
+            const formInputs = ['jerseyName', 'size', 'jerseyNumber', 'colorSelect', 'suggestedColor'];
+            formInputs.forEach(id => {
+                const el = document.getElementById(id);
+                if(el) {
+                    el.disabled = isLocked;
+                    if(isLocked && !isUpdateMode) el.value = ''; // Clear fields for privacy, unless admin granted access
+                }
+            });
+        }
+
+        function switchTab(tabId) {
+            document.getElementById('formTab').classList.add('hidden');
+            document.getElementById('resultsTab').classList.add('hidden');
+            
+            document.getElementById('btn-formTab').classList.remove('bg-white/20', 'text-white');
+            document.getElementById('btn-formTab').classList.add('bg-black/20', 'text-slate-300');
+            document.getElementById('btn-resultsTab').classList.remove('bg-white/20', 'text-white');
+            document.getElementById('btn-resultsTab').classList.add('bg-black/20', 'text-slate-300');
+            
+            document.getElementById(tabId).classList.remove('hidden');
+            document.getElementById(`btn-${tabId}`).classList.remove('bg-black/20', 'text-slate-300');
+            document.getElementById(`btn-${tabId}`).classList.add('bg-white/20', 'text-white');
+            
+            if(tabId === 'resultsTab') updateResultsDashboard();
+        }
+
+        function showMessage(msg, isSuccess = false, isWarning = false) {
+            const msgBox = document.createElement('div');
+            let bgClass = isSuccess ? 'bg-emerald-500 border-emerald-400' : 'bg-red-500 border-red-400';
+            if (isWarning) bgClass = 'bg-amber-500 border-amber-400';
+
+            msgBox.className = `fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-xl shadow-2xl z-50 transition-all duration-300 text-white font-bold flex items-center gap-2 border ${bgClass}`;
+            msgBox.style.opacity = '0';
+            msgBox.style.top = '-20px';
+            msgBox.innerHTML = `<span>${msg}</span>`;
+            
+            document.body.appendChild(msgBox);
+            requestAnimationFrame(() => {
+                msgBox.style.opacity = '1';
+                msgBox.style.top = '16px';
+            });
+
+            setTimeout(() => {
+                msgBox.style.opacity = '0';
+                msgBox.style.top = '-20px';
+                setTimeout(() => msgBox.remove(), 300);
+            }, 4000);
+        }
+
+        function updatePreview() {
+            const jerseyNameInput = document.getElementById('jerseyName');
+            const numInput = document.getElementById('jerseyNumber');
+            const colorSelect = document.getElementById('colorSelect');
+
+            let customJerseyName = jerseyNameInput.value.trim().toUpperCase();
+            document.getElementById('previewName').innerText = customJerseyName || 'PLAYER';
+            document.getElementById('previewNumber').innerText = numInput.value || '00';
+            
+            if(colorSelect.value) {
+                document.getElementById('previewJerseyFront').style.color = colorSelect.value;
+                document.getElementById('previewJerseyBack').style.color = colorSelect.value;
             } else {
-              showMessage(
-                "Existing entry found! You may update it exactly one time.",
-                false,
-                true,
-              );
-              document.getElementById("jerseyName").value =
-                existingOrder.jerseyName || "";
-              document.getElementById("size").value = existingOrder.size;
+                 document.getElementById('previewJerseyFront').style.color = '#dc2626';
+                 document.getElementById('previewJerseyBack').style.color = '#dc2626';
+            }
+        }
+        
+        function flipJersey() {
+            const inner = document.getElementById('jerseyInner');
+            if(inner.style.transform === 'rotateY(180deg)') {
+                inner.style.transform = 'rotateY(0deg)';
+            } else {
+                inner.style.transform = 'rotateY(180deg)';
+            }
+        }
 
-              // Check for the updated 'jerseyNumber' field or fallback to the legacy 'numberChoice1' field
-              document.getElementById("jerseyNumber").value =
-                existingOrder.jerseyNumber || existingOrder.numberChoice1 || "";
+        // --- Real-Time Verification ---
+        function checkNumberAvailability() {
+            const submitBtn = document.getElementById('submitBtn');
+            const input = document.getElementById('jerseyNumber');
+            let hasError = false;
 
-              document.getElementById("colorSelect").value =
-                existingOrder.colorVote;
-              document.getElementById("suggestedColor").value =
-                existingOrder.suggestedColor || "";
+            const value = input.value;
+            const warningId = `warning-jerseyNumber`;
+            
+            let warningEl = document.getElementById(warningId);
+            if (warningEl) warningEl.remove();
 
-              setFormLocked(false);
-              submitBtn.innerText = "Update Order (1 Edit Remaining)";
+            input.classList.remove('border-red-500', 'ring-red-500', 'bg-red-500/10');
 
-              setTimeout(() => {
+            if (value && globallyAllocatedNumbers.has(value) && value !== myCurrentAllocatedNumber) {
+                hasError = true;
+                input.classList.add('border-red-500', 'ring-red-500', 'bg-red-500/10');
+                
+                warningEl = document.createElement('p');
+                warningEl.id = warningId;
+                warningEl.className = 'text-xs text-red-500 font-bold mt-1 absolute -bottom-5 w-full text-center';
+                warningEl.innerText = '⚠️ Number Taken';
+                input.parentNode.appendChild(warningEl);
+            }
+
+            if (hasError && !isChecking) {
+                submitBtn.disabled = true;
+                submitBtn.innerText = "Fix Taken Number";
+            } else if (!hasError && !isChecking) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = isUpdateMode ? "Submit Updated Order" : "Submit Order";
+            }
+        }
+
+        async function checkExistingUser() {
+            if(!isFirebaseConnected || isChecking) return;
+            const nameInput = document.getElementById('playerName');
+            const submitBtn = document.getElementById('submitBtn');
+            const rawName = nameInput.value.trim();
+
+            myCurrentAllocatedNumber = null;
+            isUpdateMode = false;
+
+            if(!rawName || rawName === lastCheckedName) {
+                if(!rawName) {
+                    isExistingUserMode = false;
+                    setFormLocked(false);
+                    document.getElementById('editRequestSection').classList.add('hidden');
+                    resetSubmitButton();
+                }
+                return;
+            }
+
+            lastCheckedName = rawName;
+            isChecking = true;
+            submitBtn.innerText = "Checking Name...";
+            submitBtn.disabled = true;
+
+            try {
+                const docId = rawName.toLowerCase().replace(/[^a-z0-9]/g, '');
+                const docRef = doc(db, 'orders', docId);
+                const docSnap = await getDoc(docRef);
+
+                if(docSnap.exists()) {
+                    const existingOrder = docSnap.data();
+
+                    if (existingOrder.editGranted === true) {
+                        // ADMIN GRANTED ACCESS - LOAD DATA AND ALLOW EDITS
+                        isExistingUserMode = false;
+                        isUpdateMode = true;
+                        setFormLocked(false);
+                        document.getElementById('editRequestSection').classList.add('hidden');
+                        
+                        document.getElementById('jerseyName').value = existingOrder.jerseyName || '';
+                        document.getElementById('size').value = existingOrder.size || '';
+                        document.getElementById('jerseyNumber').value = existingOrder.jerseyNumber || existingOrder.numberChoice1 || '';
+                        document.getElementById('colorSelect').value = existingOrder.colorVote || '';
+                        document.getElementById('suggestedColor').value = existingOrder.suggestedColor || '';
+                        
+                        myCurrentAllocatedNumber = document.getElementById('jerseyNumber').value;
+                        
+                        submitBtn.innerText = "Submit Updated Order";
+                        submitBtn.classList.remove('from-amber-600', 'to-amber-500', 'hover:from-amber-500', 'hover:to-amber-400');
+                        submitBtn.classList.add('from-emerald-600', 'to-emerald-500', 'hover:from-emerald-500', 'hover:to-emerald-400');
+                        submitBtn.disabled = false;
+
+                        setTimeout(() => {
+                            updatePreview();
+                            checkNumberAvailability();
+                        }, 50);
+
+                    } else {
+                        // USER ALREADY SUBMITTED - LOCK IT DOWN
+                        isExistingUserMode = true;
+                        isUpdateMode = false;
+                        setFormLocked(true);
+                        
+                        // Show edit request UI
+                        document.getElementById('editRequestSection').classList.remove('hidden');
+                        
+                        // Style Button for Edit Request
+                        submitBtn.innerText = "Send Edit Request";
+                        submitBtn.classList.remove('from-red-600', 'to-red-500', 'hover:from-red-500', 'hover:to-red-400');
+                        submitBtn.classList.add('from-amber-600', 'to-amber-500', 'hover:from-amber-500', 'hover:to-amber-400');
+                        submitBtn.disabled = false; 
+                    }
+                    
+                } else {
+                    // NEW USER - PROCEED NORMALLY
+                    isExistingUserMode = false;
+                    setFormLocked(false);
+                    document.getElementById('editRequestSection').classList.add('hidden');
+                    resetSubmitButton();
+                    checkNumberAvailability();
+                }
+            } catch (error) {
+                console.error("Error fetching user", error);
+                resetSubmitButton();
+            } finally {
+                isChecking = false;
                 updatePreview();
-                checkNumberAvailability();
-              }, 50);
             }
-          } else {
-            setFormLocked(false);
+        }
+
+        function resetSubmitButton() {
+            const submitBtn = document.getElementById('submitBtn');
             submitBtn.innerText = "Submit Order";
-            checkNumberAvailability();
-          }
-        } catch (error) {
-          console.error("Error fetching user", error);
-          setFormLocked(false);
-          submitBtn.innerText = "Submit Order";
-        } finally {
-          isChecking = false;
-          updatePreview();
-        }
-      }
-
-      async function submitForm(event) {
-        event.preventDefault();
-        if (!isFirebaseConnected) {
-          showMessage("Cannot submit. Firebase is not configured.", false);
-          return;
+            submitBtn.classList.remove('from-amber-600', 'to-amber-500', 'hover:from-amber-500', 'hover:to-amber-400', 'from-emerald-600', 'to-emerald-500', 'hover:from-emerald-500', 'hover:to-emerald-400');
+            submitBtn.classList.add('from-red-600', 'to-red-500', 'hover:from-red-500', 'hover:to-red-400');
+            submitBtn.disabled = false;
+            isUpdateMode = false;
+            myCurrentAllocatedNumber = null;
         }
 
-        const rawName = document.getElementById("playerName").value;
-        const jerseyName = document
-          .getElementById("jerseyName")
-          .value.trim()
-          .toUpperCase();
-        const jNum = document.getElementById("jerseyNumber").value;
-        const colorSelect = document.getElementById("colorSelect");
-        const suggestedColor = document
-          .getElementById("suggestedColor")
-          .value.trim();
+        async function submitForm(event) {
+            event.preventDefault();
+            if(!isFirebaseConnected) {
+                showMessage("Cannot submit. Firebase is not configured.", false);
+                return;
+            }
+            
+            const rawName = document.getElementById('playerName').value;
+            const docId = rawName.toLowerCase().replace(/[^a-z0-9]/g, '');
 
-        const selectedColorName =
-          colorSelect.options[colorSelect.selectedIndex].text;
-        const docId = rawName.toLowerCase().replace(/[^a-z0-9]/g, "");
-        const docRef = doc(db, "orders", docId);
+            // ========================================================
+            // SCENARIO 1: SEND EDIT REQUEST (If they are locked out)
+            // ========================================================
+            if (isExistingUserMode) {
+                const editMsg = document.getElementById('editMessage').value.trim();
+                const submitBtn = document.getElementById('submitBtn');
+                
+                if(!editMsg) {
+                    showMessage("Please provide a reason for the edit.", false, true);
+                    return;
+                }
 
-        try {
-          const docSnap = await getDoc(docRef);
-
-          if (docSnap.exists()) {
-            let existingData = docSnap.data();
-            if (existingData.editCount >= 1) {
-              showMessage(
-                "Submission failed: You have already edited this entry once.",
-                false,
-              );
-              return;
+                try {
+                    const requestDocId = `${docId}_${Date.now()}`;
+                    await setDoc(doc(db, 'editRequests', requestDocId), {
+                        playerName: rawName,
+                        message: editMsg,
+                        timestamp: new Date().toISOString(),
+                        status: 'pending'
+                    });
+                    
+                    showMessage("Edit request securely sent to the Admin!", true);
+                    document.getElementById('editMessage').value = '';
+                    submitBtn.innerText = "Request Sent Successfully";
+                    submitBtn.disabled = true;
+                } catch(err) {
+                    console.error("Error sending edit request", err);
+                    showMessage("Error sending request.", false);
+                }
+                return; 
             }
 
-            await updateDoc(docRef, {
-              jerseyName: jerseyName,
-              size: document.getElementById("size").value,
-              jerseyNumber: jNum,
-              colorVote: colorSelect.value,
-              colorTheme: selectedColorName,
-              suggestedColor: suggestedColor,
-              editCount: 1,
-              timestamp: new Date().toISOString(),
-              lastEdited: new Date().toISOString(),
-            });
-            showMessage(
-              "Order successfully updated! (Edits are now locked)",
-              true,
-            );
-            setFormLocked(true);
-          } else {
-            await setDoc(docRef, {
-              playerName: rawName,
-              jerseyName: jerseyName,
-              size: document.getElementById("size").value,
-              jerseyNumber: jNum,
-              colorVote: colorSelect.value,
-              colorTheme: selectedColorName,
-              suggestedColor: suggestedColor,
-              timestamp: new Date().toISOString(),
-              editCount: 0,
-            });
-            showMessage("New order submitted securely to database!", true);
+            // ========================================================
+            // Gather Form Data
+            // ========================================================
+            const jerseyName = document.getElementById('jerseyName').value.trim().toUpperCase();
+            const jNum = document.getElementById('jerseyNumber').value;
+            const colorSelect = document.getElementById('colorSelect');
+            const suggestedColor = document.getElementById('suggestedColor').value.trim();
+            const selectedColorName = colorSelect.options[colorSelect.selectedIndex].text;
+            
+            const docRef = doc(db, 'orders', docId);
 
-            document.getElementById("orderForm").reset();
-            lastCheckedName = "";
-            updatePreview();
-            document.getElementById("jerseyInner").style.transform =
-              "rotateY(0deg)";
-          }
-        } catch (error) {
-          console.error("Error writing to database", error);
-          showMessage("Database error. Please try again.", false);
+            // ========================================================
+            // SCENARIO 2: SUBMIT UPDATED ORDER (Admin Granted Access)
+            // ========================================================
+            if (isUpdateMode) {
+                try {
+                    await updateDoc(docRef, {
+                        jerseyName: jerseyName,
+                        size: document.getElementById('size').value,
+                        jerseyNumber: jNum,
+                        colorVote: colorSelect.value,
+                        colorTheme: selectedColorName,
+                        suggestedColor: suggestedColor,
+                        lastEdited: new Date().toISOString(),
+                        editGranted: false // LOCK THE FORM AGAIN
+                    });
+                    showMessage("Order successfully updated!", true);
+                    
+                    document.getElementById('orderForm').reset();
+                    lastCheckedName = ""; 
+                    isUpdateMode = false;
+                    setFormLocked(true); // Manually lock it immediately for security
+                    updatePreview();
+                    document.getElementById('jerseyInner').style.transform = 'rotateY(0deg)';
+                    resetSubmitButton();
+                    
+                } catch(error) {
+                    console.error("Error updating database", error);
+                    showMessage("Database error. Please try again.", false);
+                }
+                return;
+            }
+
+            // ========================================================
+            // SCENARIO 3: SUBMIT BRAND NEW ORDER
+            // ========================================================
+            try {
+                await setDoc(docRef, {
+                    playerName: rawName,
+                    jerseyName: jerseyName,
+                    size: document.getElementById('size').value,
+                    jerseyNumber: jNum,
+                    colorVote: colorSelect.value,
+                    colorTheme: selectedColorName,
+                    suggestedColor: suggestedColor,
+                    timestamp: new Date().toISOString()
+                });
+                showMessage("New order submitted securely to database!", true);
+                
+                document.getElementById('orderForm').reset();
+                lastCheckedName = ""; 
+                isExistingUserMode = false;
+                updatePreview();
+                document.getElementById('jerseyInner').style.transform = 'rotateY(0deg)';
+                
+            } catch (error) {
+                console.error("Error writing to database", error);
+                showMessage("Database error. Please try again.", false);
+            }
         }
-      }
 
-      if (isFirebaseConnected) {
-        onSnapshot(collection(db, "orders"), (snapshot) => {
-          ordersData = [];
-          snapshot.forEach((doc) => {
-            ordersData.push(doc.data());
-          });
-
-          updateResultsDashboard(); // Always run this silently so validation arrays stay updated!
-          if (
-            ordersData.length === 0 &&
-            !document.getElementById("resultsTab").classList.contains("hidden")
-          ) {
-            document.getElementById("ordersTableBody").innerHTML =
-              `<tr><td colspan="6" class="p-8 text-center text-slate-500 italic">No orders submitted yet.</td></tr>`;
-          }
-        });
-      }
-
-      function updateResultsDashboard() {
-        const tbody = document.getElementById("ordersTableBody");
-        if (!tbody) return;
-        if (ordersData.length === 0) {
-          tbody.innerHTML = `<tr><td colspan="6" class="p-8 text-center text-slate-500 italic">No orders submitted yet.</td></tr>`;
-          return;
+        if(isFirebaseConnected) {
+            onSnapshot(collection(db, "orders"), (snapshot) => {
+                ordersData = [];
+                snapshot.forEach((doc) => {
+                    ordersData.push(doc.data());
+                });
+                
+                updateResultsDashboard();
+                if(ordersData.length === 0 && !document.getElementById('resultsTab').classList.contains('hidden')) {
+                     document.getElementById('ordersTableBody').innerHTML = `<tr><td colspan="6" class="p-8 text-center text-slate-500 italic">No orders submitted yet.</td></tr>`;
+                }
+            });
         }
 
-        let allocatedNumbers = new Set();
-        ordersData.sort(
-          (a, b) => new Date(a.timestamp) - new Date(b.timestamp),
-        );
+        function updateResultsDashboard() {
+            const tbody = document.getElementById('ordersTableBody');
+            if(!tbody) return;
+            if(ordersData.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="p-8 text-center text-slate-500 italic">No orders submitted yet.</td></tr>`;
+                return;
+            }
 
-        ordersData.forEach((order) => {
-          let finalNum = "Waitlist";
-          let allocationNote = "Allocated";
-          let requestedNum = order.jerseyNumber || order.numberChoice1; // Supports legacy submissions
+            let allocatedNumbers = new Set();
+            ordersData.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+            
+            ordersData.forEach(order => {
+                let finalNum = 'Waitlist';
+                let allocationNote = 'Allocated';
+                let requestedNum = order.jerseyNumber || order.numberChoice1; // Supports legacy submissions
 
-          if (requestedNum && !allocatedNumbers.has(requestedNum)) {
-            finalNum = requestedNum;
-          } else {
-            allocationNote = "Clash (Moved to Waitlist)";
-          }
+                if(requestedNum && !allocatedNumbers.has(requestedNum)) {
+                    finalNum = requestedNum;
+                } else {
+                    allocationNote = 'Clash (Moved to Waitlist)';
+                }
+                
+                if(finalNum !== 'Waitlist') allocatedNumbers.add(finalNum);
+                order.allocatedNumber = finalNum;
+                order.allocationNote = allocationNote;
+                order.savedRequestedNumber = requestedNum;
+            });
 
-          if (finalNum !== "Waitlist") allocatedNumbers.add(finalNum);
-          order.allocatedNumber = finalNum;
-          order.allocationNote = allocationNote;
-          order.savedRequestedNumber = requestedNum;
-        });
+            // Update global tracker so real-time validation form knows what is officially taken
+            globallyAllocatedNumbers = allocatedNumbers;
 
-        // Update global tracker so real-time validation form knows what is officially taken
-        globallyAllocatedNumbers = allocatedNumbers;
+            tbody.innerHTML = '';
+            ordersData.forEach(order => {
+                const d = new Date(order.timestamp);
+                const timeStr = `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}:${String(d.getSeconds()).padStart(2, '0')}`;
+                
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-800/50 transition-colors';
+                
+                let noteColor = 'text-slate-400';
+                if(order.allocationNote.includes('Clash')) noteColor = 'text-red-400 font-bold';
+                
+                let suggestedHtml = order.suggestedColor ? `<div class="text-xs text-slate-400 mt-1 italic">Suggested: ${order.suggestedColor}</div>` : '';
 
-        tbody.innerHTML = "";
-        ordersData.forEach((order) => {
-          const d = new Date(order.timestamp);
-          const timeStr = `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}:${String(d.getSeconds()).padStart(2, "0")}`;
-
-          const tr = document.createElement("tr");
-          tr.className = "hover:bg-slate-800/50 transition-colors";
-
-          let noteColor = "text-slate-400";
-          if (order.allocationNote.includes("Clash"))
-            noteColor = "text-red-400 font-bold";
-
-          let editBadge =
-            order.editCount > 0
-              ? `<span class="ml-2 bg-amber-500/20 text-amber-400 text-[10px] px-1.5 py-0.5 rounded border border-amber-500/30">Edited</span>`
-              : "";
-          let suggestedHtml = order.suggestedColor
-            ? `<div class="text-xs text-slate-400 mt-1 italic">Suggested: ${order.suggestedColor}</div>`
-            : "";
-
-          tr.innerHTML = `
+                tr.innerHTML = `
                     <td class="p-4 text-slate-400 font-mono text-xs">${timeStr}</td>
                     <td class="p-4">
-                        <div class="font-bold text-white flex items-center gap-1">${order.playerName} ${editBadge}</div>
-                        <div class="text-xs text-amber-400 font-semibold tracking-wider mt-0.5 uppercase">Print: ${order.jerseyName || "PLAYER"}</div>
+                        <div class="font-bold text-white flex items-center gap-1">${order.playerName}</div>
+                        <div class="text-xs text-amber-400 font-semibold tracking-wider mt-0.5 uppercase">Print: ${order.jerseyName || 'PLAYER'}</div>
                     </td>
                     <td class="p-4"><span class="bg-slate-700 px-2 py-1 rounded text-xs font-semibold">${order.size}</span></td>
                     <td class="p-4 bg-emerald-900/10">
                         <span class="font-black text-emerald-400 text-xl jersey-font tracking-wider drop-shadow-md">${order.allocatedNumber}</span>
                     </td>
-                    <td class="p-4 text-xs ${noteColor}">${order.allocationNote} <br><span class="text-slate-500 opacity-50">Requested: ${order.savedRequestedNumber || "None"}</span></td>
+                    <td class="p-4 text-xs ${noteColor}">${order.allocationNote} <br><span class="text-slate-500 opacity-50">Requested: ${order.savedRequestedNumber || 'None'}</span></td>
                     <td class="p-4">
                         <div class="flex items-center gap-2 bg-slate-800 p-1.5 rounded-lg w-max border border-slate-700">
                             <div class="w-4 h-4 rounded-full shadow-sm" style="background-color: ${order.colorVote}"></div>
@@ -1046,67 +750,53 @@
                         ${suggestedHtml}
                     </td>
                 `;
-          tbody.appendChild(tr);
-        });
-      }
-
-      function exportToCSV() {
-        if (ordersData.length === 0) {
-          showMessage("No orders to export yet!", false);
-          return;
+                tbody.appendChild(tr);
+            });
         }
 
-        const headers = [
-          "Original Submit Time",
-          "Last Edited Time",
-          "Edit Count",
-          "Player Name",
-          "Jersey Display Name",
-          "Size",
-          "FINAL ALLOCATED NUMBER",
-          "Requested Number",
-          "Allocation Note",
-          "Color Theme Name",
-          "Suggested Color",
-        ];
-        const csvRows = [headers.join(",")];
+        function exportToCSV() {
+            if (ordersData.length === 0) {
+                showMessage("No orders to export yet!", false);
+                return;
+            }
 
-        for (const order of ordersData) {
-          const formatTime = (isoString) => {
-            if (!isoString) return "N/A";
-            const d = new Date(isoString);
-            return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")} ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}:${String(d.getSeconds()).padStart(2, "0")}`;
-          };
+            const headers = ['Original Submit Time', 'Player Name', 'Jersey Display Name', 'Size', 'FINAL ALLOCATED NUMBER', 'Requested Number', 'Allocation Note', 'Color Theme Name', 'Suggested Color'];
+            const csvRows = [headers.join(',')];
 
-          const rowValues = [
-            `"${formatTime(order.timestamp)}"`,
-            `"${formatTime(order.lastEdited)}"`,
-            order.editCount,
-            `"${order.playerName.replace(/"/g, '""')}"`,
-            `"${(order.jerseyName || "").replace(/"/g, '""')}"`,
-            `"${order.size}"`,
-            `"${order.allocatedNumber}"`,
-            order.savedRequestedNumber || "",
-            `"${order.allocationNote}"`,
-            `"${order.colorTheme}"`,
-            `"${(order.suggestedColor || "").replace(/"/g, '""')}"`,
-          ];
-          csvRows.push(rowValues.join(","));
+            for (const order of ordersData) {
+                const formatTime = (isoString) => {
+                    if(!isoString) return 'N/A';
+                    const d = new Date(isoString);
+                    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}:${String(d.getSeconds()).padStart(2, '0')}`;
+                };
+
+                const rowValues = [
+                    `"${formatTime(order.timestamp)}"`,
+                    `"${order.playerName.replace(/"/g, '""')}"`,
+                    `"${(order.jerseyName || '').replace(/"/g, '""')}"`,
+                    `"${order.size}"`,
+                    `"${order.allocatedNumber}"`,
+                    order.savedRequestedNumber || '',
+                    `"${order.allocationNote}"`,
+                    `"${order.colorTheme}"`,
+                    `"${(order.suggestedColor || '').replace(/"/g, '""')}"`
+                ];
+                csvRows.push(rowValues.join(','));
+            }
+
+            const blob = new Blob([csvRows.join('\n')], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.setAttribute('hidden', '');
+            a.setAttribute('href', url);
+            a.setAttribute('download', 'Smashers_Final_Allocations.csv');
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            showMessage("Excel Downloaded!", true);
         }
 
-        const blob = new Blob([csvRows.join("\n")], { type: "text/csv" });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.setAttribute("hidden", "");
-        a.setAttribute("href", url);
-        a.setAttribute("download", "Smashers_Final_Allocations.csv");
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        showMessage("Excel Downloaded!", true);
-      }
-
-      updatePreview();
+        updatePreview();
     </script>
-  </body>
+</body>
 </html>
